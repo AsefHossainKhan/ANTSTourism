@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="MapperConfig\AutoMapperSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

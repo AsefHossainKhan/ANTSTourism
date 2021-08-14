@@ -10,3 +10,15 @@ E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\De
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.dll
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.pdb
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll.config
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\DAL.pdb
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.dll
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.xml
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\obj\Debug\DAL.dll
+F:\Users\user\desktop\ATP2 Final Project\ANTSTourism\Backend\DAL\obj\Debug\DAL.pdb
