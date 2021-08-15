@@ -10,3 +10,15 @@ E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\De
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.dll
 E:\Porashona\Summer 2021\.NET\Final\Final Project\Backend\ANTSBackend\DAL\obj\Debug\DAL.pdb
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll.config
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\DAL.pdb
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.dll
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.dll
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.xml
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.xml
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\obj\Debug\DAL.dll
+J:\ATP2FinalProject\ANTSTourism\Backend\DAL\obj\Debug\DAL.pdb
