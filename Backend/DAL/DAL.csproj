@@ -110,6 +110,7 @@
     <Compile Include="Voucherentry.cs">
       <DependentUpon>ANTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="VoucherRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ANTS.edmx">

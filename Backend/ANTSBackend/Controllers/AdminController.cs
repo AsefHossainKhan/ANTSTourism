@@ -114,5 +114,41 @@ namespace ANTSBackend.Controllers
         {
             return RatingService.DeleteRating(id);
         }
+
+        //VOUCHERS
+        [Route("api/vouchers/all")]
+        [HttpGet]
+        public List<VoucherModel> GetAllVouchers()
+        {
+            return VoucherService.GetAllVouchers();
+        }
+
+        [Route("api/vouchers/{id}")]
+        [HttpGet]
+        public VoucherModel GetVoucher(int id)
+        {
+            return VoucherService.GetVoucher(id);
+        }
+
+        [Route("api/vouchers/add")]
+        [HttpPost]
+        public VoucherModel AddVoucher(VoucherModel voucher)
+        {
+            return VoucherService.AddVoucher(voucher);
+        }
+
+        [Route("api/vouchers/edit/{id}")]
+        [HttpPost]
+        public VoucherModel EditVoucher(VoucherModel voucher)
+        {
+            return VoucherService.EditVoucher(voucher);
+        }
+
+        [Route("api/vouchers/delete/{id}")]
+        [HttpGet]
+        public VoucherModel DeleteVoucher(int id)
+        {
+            return VoucherService.DeleteVoucher(id);
+        }
     }
 }
