@@ -47,6 +47,7 @@
     <Compile Include="NoticeModel.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="PackageModel.cs" />
+    <Compile Include="RatingModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

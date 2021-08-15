@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using DAL;
+using BEL;
 
 namespace BLL.MapperConfig
 {
@@ -11,7 +13,9 @@ namespace BLL.MapperConfig
     {
         public AutoMapperSettings()
         {
-            //CreateMap<CategoryModel, category>();
+            CreateMap<UserModel, User>();
+            CreateMap<NoticeModel, Notice>();
+            CreateMap<RatingModel, Rating>();
             //CreateMap<ProductModel, product>();
             //CreateMap<OrderModel, order>();
             //CreateMap<ProductOrderModel, productorder>();

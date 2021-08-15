@@ -1,21 +1,118 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using BEL;
+﻿using BEL;
 using BLL;
+using System.Collections.Generic;
+using System.Web.Http;
 
 namespace ANTSBackend.Controllers
 {
     public class AdminController : ApiController
     {
-        [Route("api/Users/GetAll")]
+        //USERS
+        [Route("api/users/all")]
         [HttpGet]
         public List<UserModel> GetAllUsers()
         {
             return UserService.GetAllUsers();
+        }
+
+        [Route("api/users/{id}")]
+        [HttpGet]
+        public UserModel GetUser(int id)
+        {
+            return UserService.GetUser(id);
+        }
+
+        [Route("api/users/add")]
+        [HttpPost]
+        public UserModel AddUser(UserModel user)
+        {
+            return UserService.AddUser(user);
+        }
+
+        [Route("api/users/edit/{id}")]
+        [HttpPost]
+        public UserModel EditUser(UserModel user)
+        {
+            return UserService.EditUser(user);
+        }
+
+        [Route("api/users/delete/{id}")]
+        [HttpGet]
+        public UserModel DeleteUser(int id)
+        {
+            return UserService.DeleteUser(id);
+        }
+
+        //NOTICES
+        [Route("api/notices/all")]
+        [HttpGet]
+        public List<NoticeModel> GetAllNotices()
+        {
+            return NoticeService.GetAllNotices();
+        }
+
+        [Route("api/notices/{id}")]
+        [HttpGet]
+        public NoticeModel GetNotice(int id)
+        {
+            return NoticeService.GetNotice(id);
+        }
+
+        [Route("api/notices/add")]
+        [HttpPost]
+        public NoticeModel AddNotice(NoticeModel notice)
+        {
+            return NoticeService.AddNotice(notice);
+        }
+
+        [Route("api/notices/edit/{id}")]
+        [HttpPost]
+        public NoticeModel EditNotice(NoticeModel notice)
+        {
+            return NoticeService.EditNotice(notice);
+        }
+
+        [Route("api/notices/delete/{id}")]
+        [HttpGet]
+        public NoticeModel DeleteNotice(int id)
+        {
+            return NoticeService.DeleteNotice(id);
+        }
+
+        //RATINGS
+        [Route("api/ratings/all")]
+        [HttpGet]
+        public List<RatingModel> GetAllRatings()
+        {
+            return RatingService.GetAllRatings();
+        }
+
+        [Route("api/ratings/{id}")]
+        [HttpGet]
+        public RatingModel GetRating(int id)
+        {
+            return RatingService.GetRating(id);
+        }
+
+        [Route("api/ratings/add")]
+        [HttpPost]
+        public RatingModel AddRating(RatingModel rating)
+        {
+            return RatingService.AddRating(rating);
+        }
+
+        [Route("api/ratings/edit/{id}")]
+        [HttpPost]
+        public RatingModel EditRating(RatingModel rating)
+        {
+            return RatingService.EditRating(rating);
+        }
+
+        [Route("api/ratings/delete/{id}")]
+        [HttpGet]
+        public RatingModel DeleteRating(int id)
+        {
+            return RatingService.DeleteRating(id);
         }
     }
 }
