@@ -43,5 +43,12 @@ namespace ANTSBackend.Controllers
         {
             PackageService.DeletePackage(id);
         }
+
+        [Route("api/Package/Search/{search}")]
+        [HttpGet]
+        public List<PackageModel> GetSearchPackage(string search)
+        {
+            return PackageService.GetSearchPackage(search);
+        }
     }
 }

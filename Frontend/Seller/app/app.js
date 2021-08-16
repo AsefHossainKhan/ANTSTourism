@@ -5,25 +5,9 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         .when("/", {
             templateUrl: "views/pages/demopage.html"
         })
-        .when("/addcategories", {
-            templateUrl: "views/pages/addcategory.html",
-            controller: 'addcategory'
-        })
-        .when("/products", {
-            templateUrl: "views/pages/products.html",
-            controller: 'products'
-        })
         .when("/edit/:id", {
             templateUrl: "views/pages/edit.html",
             controller: 'edit'
-        })
-        .when("/delete/:id", {
-            templateUrl: "views/pages/delete.html",
-            controller: 'delete'
-        })
-        .when("/showcategories", {
-            templateUrl: "views/pages/showcategories.html",
-            controller: 'showcategories'
         })
         .when("/showproducts", {
             templateUrl: "views/pages/showproducts.html",
@@ -40,6 +24,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         .when("/showorder/:id", {
             templateUrl: "views/pages/orderdetails.html",
             controller: 'orderdetails'
+        })
+        .when("/myprofile", {
+            templateUrl: "views/pages/myprofile.html",
+            controller: 'myprofile'
         })
         .otherwise({
             redirectTo: "/"

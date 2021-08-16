@@ -80,6 +80,7 @@
     <Compile Include="Blog.cs">
       <DependentUpon>ANTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderRepo.cs" />
     <Compile Include="PackageRepo.cs" />
     <Compile Include="UserRepo.cs" />
     <Compile Include="Notice.cs">

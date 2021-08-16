@@ -44,5 +44,11 @@ namespace BLL
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
             PackageRepo.DeletePackage(id);
         }
+
+        public static List<PackageModel> GetSearchPackage(string search)
+        {
+            var searchPackage = PackageRepo.GetSearchPackage(search);
+            return AutoMapper.Mapper.Map<List<Package>, List<PackageModel>>(searchPackage);
+        }
     }
 }

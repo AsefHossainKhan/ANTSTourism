@@ -55,5 +55,12 @@ namespace DAL
             context.Packages.Remove(pr);
             context.SaveChanges();
         }
+        public static List<Package> GetSearchPackage(string search)
+        {
+            var list = (from p in context.Packages
+                        where p.packagename.Contains(search)
+                        select p).ToList();
+            return list;
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace BLL.MapperConfig
         {
             //CreateMap<CategoryModel, category>();
             CreateMap<PackageModel, Package>();
+            CreateMap<UserModel, User>();
             //CreateMap<OrderModel, order>();
             //CreateMap<ProductOrderModel, productorder>();
 

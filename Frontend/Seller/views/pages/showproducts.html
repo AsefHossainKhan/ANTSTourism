@@ -35,10 +35,8 @@
       <br /><br /><br />
     </div>
     <div class="center pull-right app-search hidden-sm hidden-xs m-r-10">
-      <input type="text" placeholder="Search..." class="form-control" />
-      <a href="">
-        <i class="fa fa-search"></i>
-      </a>
+      <input type="text" placeholder="Search by name" class="form-control" ng-model="search" />
+      <button ng-click="Search()" class="btn btn-primary">Search</button>
     </div>
     <div class="row">
       <div class="col-sm-12">
@@ -73,11 +71,12 @@
                   <td>{{product.approvestatus}}</td>
                   <td><a href="#!edit/{{product.packageid}}" class="btn btn-success">Edit</a></td>
                   <td>
-                    <input type="submit" ng-click="delete(product.packageid)"
-                      onclick="return confirm('Are you sure want to delete this ?')" name="delete_product"
+                    <input type="submit" ng-model="delete" ng-click="delete(product.packageid)" name="delete_product"
                       class="btn btn-danger" value="Delete" />
                   </td>
                 </tr>
+                <!-- ?'ng-click="
+                      delete(product.packageid)"" -->
               </tbody>
             </table>
           </div>
