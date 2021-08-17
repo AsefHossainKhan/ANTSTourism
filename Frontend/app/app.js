@@ -29,6 +29,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             templateUrl: "views/pages/myprofile.html",
             controller: 'myprofile'
         })
+        .when("/login", {
+            templateUrl: "views/pages/login.html",
+            controller: 'login'
+        })
         .otherwise({
             redirectTo: "/"
         });
@@ -39,3 +43,9 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
     //}
 
 }]);
+
+
+app.controller("myController", function($rootScope){
+    $rootScope.isUserSeller = true;
+    $rootScope.isUserLoggedIn = false;
+})

@@ -1,4 +1,5 @@
-app.controller("addpackage", function ($scope, ajax) {
+app.controller("addpackage", function ($scope, ajax, $rootScope) {
+  alert($rootScope.isUserLoggedIn);
 
   $scope.addproduct = function () {
     console.log("ashshi");
