@@ -1,5 +1,6 @@
 ﻿using BEL;
 using BLL;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -15,6 +16,13 @@ namespace ANTSBackend.Controllers
             return UserService.GetAllUsers();
         }
 
+        [Route("api/users/search/{search}")]
+        [HttpGet]
+        public List<UserModel> GetSearchUsers(string search)
+        {
+            return UserService.GetSearchUsers(search);
+        }
+
         [Route("api/users/{id}")]
         [HttpGet]
         public UserModel GetUser(int id)
@@ -26,18 +34,20 @@ namespace ANTSBackend.Controllers
         [HttpPost]
         public UserModel AddUser(UserModel user)
         {
+            user.usertype = "Manager";
+            user.createdat = DateTime.Now;
             return UserService.AddUser(user);
         }
 
-        [Route("api/users/edit/{id}")]
-        [HttpPost]
+        [Route("api/users/edit")]
+        [HttpPut]
         public UserModel EditUser(UserModel user)
         {
             return UserService.EditUser(user);
         }
 
         [Route("api/users/delete/{id}")]
-        [HttpGet]
+        [HttpDelete]
         public UserModel DeleteUser(int id)
         {
             return UserService.DeleteUser(id);

@@ -16,6 +16,12 @@ namespace BLL
             return AutoMapper.Mapper.Map<List<User>, List<UserModel>>(users);
         }
 
+        public static List<UserModel> GetSearchUsers(string search)
+        {
+            var users = UserRepo.GetSearchUsers(search);
+            return AutoMapper.Mapper.Map<List<User>, List<UserModel>>(users);
+        }
+
         public static UserModel GetUser(int id)
         {
             var user = UserRepo.GetUser(id);

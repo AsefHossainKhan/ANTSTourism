@@ -1,4 +1,5 @@
 var app = angular.module("myApp", ["ngRoute"]);
+var API_PORT = "https://localhost:44384/";
 app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 
     $routeProvider
@@ -32,6 +33,22 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         .when("/login", {
             templateUrl: "views/pages/login.html",
             controller: 'login'
+        })
+        .when("/admin/viewusers", {
+            templateUrl: "views/pages/adminViewUsers.html",
+            controller: 'adminViewUsers'
+        })
+        .when("/admin/createuser", {
+            templateUrl: "views/pages/adminCreateUser.html",
+            controller: 'adminCreateUser'
+        })
+        .when("/admin/edituser/:id", {
+            templateUrl: "views/pages/adminEditUser.html",
+            controller: 'adminEditUser'
+        })
+        .when("/admin/deleteuser/:id", {
+            templateUrl: "views/pages/adminDeleteUser.html",
+            controller: 'adminDeleteUser'
         })
         .otherwise({
             redirectTo: "/"
