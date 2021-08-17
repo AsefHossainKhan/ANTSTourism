@@ -24,5 +24,23 @@ namespace DAL
         {
             return context.Orders.FirstOrDefault(e => e.orderid == id);
         }
+
+        public static Order AddOrder(Order o, int id)
+        {
+            o.createdat = DateTime.Now;
+            o.customerid = id;
+            o.status = "unsold";
+            context.Orders.Add(o);
+            context.SaveChanges();
+            return o; ;
+        }
+
+        public static object CancelOrder(int id, int orderid)
+        {
+            var data = context.Orders.FirstOrDefault(e => e.orderid == orderid);
+            data.status = "cancelled";
+            context.SaveChanges();
+            return data; ;
+        }
     }
 }

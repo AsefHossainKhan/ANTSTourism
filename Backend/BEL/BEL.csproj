@@ -47,8 +47,10 @@
     <Compile Include="NoticeModel.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="PackageModel.cs" />
+    <Compile Include="RatingModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoucherModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

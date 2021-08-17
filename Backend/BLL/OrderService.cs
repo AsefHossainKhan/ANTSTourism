@@ -23,5 +23,18 @@ namespace BLL
             var order = OrderRepo.GetOrders(id);
             return AutoMapper.Mapper.Map<Order, OrderModel>(order);
         }
+
+        public static OrderModel AddOrder(OrderModel order, int id)
+        {
+            var o = AutoMapper.Mapper.Map<OrderModel, Order>(order);
+            var data = OrderRepo.AddOrder(o,id);
+            return AutoMapper.Mapper.Map<Order, OrderModel>((Order)data); 
+        }
+
+        public static OrderModel CancelOrder(int id, int orderid)
+        {
+            var data = OrderRepo.CancelOrder(id, orderid);
+            return AutoMapper.Mapper.Map<Order, OrderModel>((Order)data);
+        }
     }
 }
