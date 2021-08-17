@@ -3,7 +3,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
     $routeProvider
         .when("/", {
-            templateUrl: "views/pages/demopage.html"
+            templateUrl: "views/pages/adminHome.html"
         })
         .when("/edit/:id", {
             templateUrl: "views/pages/edit.html",
@@ -46,6 +46,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
 
 app.controller("myController", function($rootScope){
-    $rootScope.isUserSeller = true;
+    $rootScope.isUserSeller = false;
+    $rootScope.isUserAdmin = true;
     $rootScope.isUserLoggedIn = false;
 })
