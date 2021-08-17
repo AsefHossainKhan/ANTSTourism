@@ -18,7 +18,7 @@ namespace ANTSBackend.Controllers
             return OrderService.GetAllOrders(id);
         }
 
-        [Route("api/Order/{id}")]
+        [Route("api/CustomerOrder/{id}")]
         [HttpGet]
         public OrderModel GetOrders(int id)
         {

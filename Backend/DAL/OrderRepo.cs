@@ -13,6 +13,8 @@ namespace DAL
         {
             context = new ANTSEntities();
         }
+
+        //BLONDE CHEF
         public static List<Order> GetOrder()
         {
             var list = (from p in context.Orders
@@ -33,6 +35,18 @@ namespace DAL
             oldp.status = status;
 
             context.SaveChanges();
+        }
+
+        //NUSHRAT APA
+        public static List<Order> GetAllOrders(int id)
+        {
+            return context.Orders.Where(e => e.customerid == id).ToList();
+        }
+
+
+        public static Order GetOrders(int id)
+        {
+            return context.Orders.FirstOrDefault(e => e.orderid == id);
         }
     }
 }

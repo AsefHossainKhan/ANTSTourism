@@ -17,7 +17,7 @@ namespace DAL
         public static List<Package> GetProducts()
         {
             //return context.Packages.ToList();
-          //  var id = Convert.ToInt32(Session["id"].ToString());
+            //  var id = Convert.ToInt32(Session["id"].ToString());
             var list = (from p in context.Packages
                         where p.userid == 8
                         select p).ToList();

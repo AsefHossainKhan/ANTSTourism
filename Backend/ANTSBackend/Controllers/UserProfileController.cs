@@ -13,9 +13,9 @@ namespace ANTSBackend.Controllers
     {
         [Route("api/User/Get")]
         [HttpGet]
-        public List<UserModel> GetUser()
+        public UserModel GetUser(int id)
         {
-            return UserService.GetUser();
+            return UserService.GetUser(id);
         }
         [Route("api/User/edit")]
         [HttpPost]

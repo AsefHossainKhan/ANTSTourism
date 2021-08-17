@@ -36,7 +36,7 @@ namespace BLL
         {
             var data = AutoMapper.Mapper.Map<PackageModel, Package>(pckage);
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
-            PackageRepo.EditPackage(id,data);
+            PackageRepo.EditPackage(id, data);
         }
         public static void DeletePackage(int id)
         {

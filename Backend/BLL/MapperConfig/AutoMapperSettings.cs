@@ -17,6 +17,7 @@ namespace BLL.MapperConfig
             CreateMap<NoticeModel, Notice>();
             CreateMap<RatingModel, Rating>();
             CreateMap<VoucherModel, Voucher>();
+            CreateMap<PackageModel, Package>();
             //CreateMap<ProductModel, product>();
             //CreateMap<OrderModel, order>();
             //CreateMap<ProductOrderModel, productorder>();

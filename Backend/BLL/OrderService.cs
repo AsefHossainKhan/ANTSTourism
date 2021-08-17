@@ -29,5 +29,18 @@ namespace BLL
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
             OrderRepo.EditStatus(id, status);
         }
+        public static List<OrderModel> GetAllOrders(int id)
+        {
+            var orders = OrderRepo.GetAllOrders(id);
+            var data = AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(orders);
+            return data;
+        }
+
+
+        public static OrderModel GetOrders(int id)
+        {
+            var order = OrderRepo.GetOrders(id);
+            return AutoMapper.Mapper.Map<Order, OrderModel>(order);
+        }
     }
 }
