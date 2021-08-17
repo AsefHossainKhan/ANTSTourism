@@ -13,16 +13,26 @@ namespace DAL
         {
             context = new ANTSEntities();
         }
-
-        public static List<Order> GetAllOrders(int id)
+        public static List<Order> GetOrder()
         {
-            return context.Orders.Where(e => e.customerid == id).ToList();
+            var list = (from p in context.Orders
+                        where p.sellerid == 8
+                        select p).ToList();
+            return list;
         }
-
-     
-        public static Order GetOrders(int id)
+        public static List<Order> GetSearchOrder(string search)
         {
-            return context.Orders.FirstOrDefault(e => e.orderid == id);
+            var list = (from p in context.Orders
+                        where p.ordername.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+        public static void EditStatus(int id, string status)
+        {
+            var oldp = context.Orders.FirstOrDefault(e => e.orderid == id);
+            oldp.status = status;
+
+            context.SaveChanges();
         }
     }
 }
