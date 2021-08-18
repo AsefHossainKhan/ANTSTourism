@@ -50,6 +50,46 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             templateUrl: "views/pages/adminDeleteUser.html",
             controller: 'adminDeleteUser'
         })
+        .when("/admin/viewnotices", {
+            templateUrl: "views/pages/adminViewNotices.html",
+            controller: 'adminViewNotices'
+        })
+        .when("/admin/createnotice", {
+            templateUrl: "views/pages/adminCreateNotice.html",
+            controller: 'adminCreateNotice'
+        })
+        .when("/admin/editnotice/:id", {
+            templateUrl: "views/pages/adminEditNotice.html",
+            controller: 'adminEditNotice'
+        })
+        .when("/admin/deletenotice/:id", {
+            templateUrl: "views/pages/adminDeleteNotice.html",
+            controller: 'adminDeleteNotice'
+        })
+        .when("/admin/viewvouchers", {
+            templateUrl: "views/pages/adminViewVouchers.html",
+            controller: 'adminViewVouchers'
+        })
+        .when("/admin/createvoucher", {
+            templateUrl: "views/pages/adminCreateVoucher.html",
+            controller: 'adminCreateVoucher'
+        })
+        .when("/admin/editvoucher/:id", {
+            templateUrl: "views/pages/adminEditVoucher.html",
+            controller: 'adminEditVoucher'
+        })
+        .when("/admin/deletevoucher/:id", {
+            templateUrl: "views/pages/adminDeleteVoucher.html",
+            controller: 'adminDeleteVoucher'
+        })
+        .when("/admin/adminactions", {
+            templateUrl: "views/pages/adminActions.html",
+            controller: 'adminActions'
+        })
+        .when("/admin/adminviewauditlog", {
+            templateUrl: "views/pages/adminViewAuditLog.html",
+            controller: 'adminViewAuditLog'
+        })
         .otherwise({
             redirectTo: "/"
         });

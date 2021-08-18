@@ -12,5 +12,7 @@ namespace BEL
         public string voucherstatus { get; set; }
         public string voucher1 { get; set; }
         public int userid { get; set; }
+
+        public string user_name { get; set; }
     }
 }

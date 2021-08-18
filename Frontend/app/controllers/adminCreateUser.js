@@ -7,6 +7,7 @@ app.controller("adminCreateUser", function ($scope, $http, ajax, $location) {
   // function error(error) {
 
   // }
+  $scope.statuses = ["Valid", "Invalid", "Banned"];
 
   $scope.createUser = function (user) {
     if (user.password != user.cpassword){

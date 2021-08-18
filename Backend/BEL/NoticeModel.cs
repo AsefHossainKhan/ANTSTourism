@@ -14,5 +14,7 @@ namespace BEL
         public string notice1 { get; set; }
         public System.DateTime createdat { get; set; }
         public string status { get; set; }
+
+        public string user_name { get; set; }
     }
 }

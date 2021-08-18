@@ -25,7 +25,7 @@
                       type="text"
                       required
                     />
-                    <span ng-show="myForm.name.$error.required"
+                    <span class="text-danger" ng-show="myForm.name.$touched && myForm.name.$error.required"
                       >Name is required.</span
                     >
                   </div>
@@ -35,14 +35,13 @@
                     >Status <span class="required">*</span></label
                   >
                   <div class="col-lg-10">
-                    <input
-                    ng-model="user.status"
-                    class="form-control"
-                    id="status"
+                    <select
                     name="status"
-                    type="text"
+                    ng-model="user.status"
+                    ng-options="status for status in statuses track by status"
+                    class="form-control form-control-line"
                     required
-                  />
+                  ></select>
                     <!-- <select
                       ng-model="user.status"
                       name="status"
@@ -52,7 +51,7 @@
                       <option value="Active">Active</option>
                       <option value="Inactive">Inactive</option>
                     </select> -->
-                    <span ng-show="myForm.status.$error.required"
+                    <span class="text-danger" ng-show="myForm.status.$touched && myForm.status.$error.required"
                       >Status is required.</span
                     >
                   </div>
@@ -70,7 +69,7 @@
                       name="email"
                       required
                     />
-                    <span ng-show="myForm.email.$error.required"
+                    <span class="text-danger" ng-show="myForm.email.$touched && myForm.email.$error.required"
                       >Email is required.</span
                     >
                   </div>
@@ -88,7 +87,7 @@
                       name="password"
                       required
                     />
-                    <span ng-show="myForm.password.$error.required"
+                    <span class="text-danger" ng-show="myForm.password.$touched && myForm.password.$error.required"
                       >Password is required.</span
                     >
                   </div>
@@ -106,7 +105,7 @@
                       type="text"
                       required
                     />
-                    <span ng-show="myForm.image.$error.required"
+                    <span class="text-danger" ng-show="myForm.image.$touched && myForm.image.$error.required"
                       >Image is required.</span
                     >
                   </div>
@@ -124,7 +123,7 @@
                       type="text"
                       required
                     />
-                    <span ng-show="myForm.number.$error.required"
+                    <span class="text-danger" ng-show="myForm.number.$touched && myForm.number.$error.required"
                       >Phone Number is required.</span
                     >
                   </div>

@@ -19,6 +19,16 @@ namespace DAL
             return context.Vouchers.ToList();
         }
 
+
+        public static List<Voucher> GetSearchVouchers(string search)
+        {
+            var list = (from p in context.Vouchers
+                        where p.voucher1.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+
+
         public static Voucher GetVoucher(int id)
         {
             return context.Vouchers.FirstOrDefault(e => e.voucherid == id);

@@ -2,6 +2,7 @@ app.controller(
   "adminEditUser",
   function ($scope, $http, ajax, $location, $routeParams) {
     var id = $routeParams.id;
+    $scope.statuses = ["Valid", "Invalid", "Banned"];
     ajax.get(API_PORT + "api/users/" + id, success, error);
     function success(response) {
       $scope.user = response.data;
