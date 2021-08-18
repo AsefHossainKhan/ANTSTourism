@@ -46,3 +46,19 @@ E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BLL\obj\De
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BLL\obj\Debug\BLL.csproj.CopyComplete
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BLL\obj\Debug\BLL.dll
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BLL\obj\Debug\BLL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\obj\Debug\BLL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\obj\Debug\BLL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\BLL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\BLL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\AutoMapper.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\BEL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\DAL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\EntityFramework.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\BEL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\DAL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\DAL.dll.config
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\AutoMapper.xml
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\bin\Debug\EntityFramework.xml
+J:\Atp2FINALNEW\ANTSTourism\Backend\BLL\obj\Debug\BLL.csproj.CopyComplete
