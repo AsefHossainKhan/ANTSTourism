@@ -16,3 +16,9 @@ E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BEL\obj\De
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
 E:\Porashona\Summer 2021\.NET\Final\Final Project\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\bin\Debug\BEL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\bin\Debug\BEL.pdb
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
+J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb
