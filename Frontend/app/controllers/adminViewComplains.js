@@ -1,11 +1,15 @@
-app.controller("adminViewComplains", function ($scope, $http, ajax,$location) {
-  ajax.get(API_PORT + "api/complains/all", success, error);
-  function success(response) {
-    $scope.complains = response.data;
-    console.log(response.data);
+app.controller(
+  "adminViewComplains",
+  function ($scope, $http, ajax, $location, $rootScope) {
+    if ($rootScope.UserType != "Admin") {
+      $location.path("/");
+      return;
+    }
+    ajax.get(API_PORT + "api/complains/all", success, error);
+    function success(response) {
+      $scope.complains = response.data;
+      console.log(response.data);
+    }
+    function error(error) {}
   }
-  function error(error) {
-
-  }
-
-});
+);

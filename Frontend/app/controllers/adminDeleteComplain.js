@@ -1,6 +1,10 @@
 app.controller(
   "adminDeleteComplain",
-  function ($scope, $http, ajax, $location, $routeParams) {
+  function ($scope, $http, ajax, $location, $routeParams, $rootScope) {
+    if ($rootScope.UserType != "Admin") {
+      $location.path("/");
+      return;
+    }
     var id = $routeParams.id;
     ajax.get(API_PORT + "api/complains/" + id, success, error);
     function success(response) {

@@ -1,4 +1,9 @@
-app.controller("adminActions", function ($scope, $http, ajax, $location, $route) {
+app.controller("adminActions", function ($scope, $http, ajax, $location, $route, $rootScope) {
+  if ($rootScope.UserType != "Admin") {
+    $location.path("/");
+    return;
+  }
+  
   ajax.get(API_PORT + "api/users/all", success, error);
   function success(response) {
     $scope.users = response.data;
@@ -7,20 +12,7 @@ app.controller("adminActions", function ($scope, $http, ajax, $location, $route)
   }
   function error(error) {}
   $scope.statuses = ["Valid", "Invalid", "Banned"];
-  // $scope.statuses = [
-  //   {
-  //     actionName: "Valid",
-  //     actionId: 1,
-  //   },
-  //   {
-  //     actionName: "Invalid",
-  //     actionId: 2,
-  //   },
-  //   {
-  //     actionName: "Banned",
-  //     actionId: 3,
-  //   },
-  // ];
+
   $scope.search = function () {
     if ($scope.searchText === "") {
       ajax.get(API_PORT + "api/users/all", success, error);
@@ -51,7 +43,7 @@ app.controller("adminActions", function ($scope, $http, ajax, $location, $route)
           actionType = 3;
         }
         auditLog = {
-          adminid: 1,
+          adminid: $rootScope.UserId,
           userid: user.userid,
           actiontypeid: actionType,
         };
