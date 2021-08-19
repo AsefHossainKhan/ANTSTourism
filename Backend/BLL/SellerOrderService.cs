@@ -36,6 +36,13 @@ namespace BLL
             return data;
         }
 
+        public static List<OrderModel> GetFullOrders()
+        {
+            var orders = SellerOrderRepo.GetFullOrders();
+            var data = AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(orders);
+            return data;
+        }
+
 
         public static OrderModel GetOrders(int id)
         {

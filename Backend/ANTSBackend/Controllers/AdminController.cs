@@ -198,5 +198,13 @@ namespace ANTSBackend.Controllers
             return AuditLogService.GetAllAuditLogs();
         }
 
+        //ORDER
+        [Route("api/orders/all")]
+        [HttpGet]
+        public List<OrderModel> GetFullOrders()
+        {
+            return SellerOrderService.GetFullOrders();
+        }
+
     }
 }
