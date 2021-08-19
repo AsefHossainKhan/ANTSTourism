@@ -19,6 +19,14 @@ namespace DAL
             return context.Notices.ToList();
         }
 
+        public static List<Notice> GetSearchNotices(string search)
+        {
+            var list = (from p in context.Notices
+                        where p.notice1.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+
         public static Notice GetNotice(int id)
         {
             return context.Notices.FirstOrDefault(e => e.noticeid == id);

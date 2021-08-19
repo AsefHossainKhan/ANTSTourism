@@ -16,7 +16,7 @@ namespace DAL
 
         public static List<Rating> GetAllRatings()
         {
-            return context.Ratings.ToList();
+            return context.Ratings.Where(e => e.complain != null).ToList();
         }
 
         public static Rating GetRating(int id)

@@ -18,7 +18,17 @@ namespace BLL.MapperConfig
             CreateMap<RatingModel, Rating>();
             CreateMap<VoucherModel, Voucher>();
             CreateMap<PackageModel, Package>();
-            //CreateMap<ProductModel, product>();
+            CreateMap<AuditLogModel, Auditlog>();
+            //CreateMap<AuditLogModel, Auditlog>().ForMember(e => e.ac, opt => opt.MapFrom(e => e.admin_name));
+            //var map = CreateMap<AuditLogModel, DAL.Action>();
+            //map.ForAllMembers(opt => opt.Ignore());
+            //map.ForMember(dest => dest.actionanme, opt => opt.MapFrom(src => src.action_actionanme));
+
+            //var map2 = CreateMap<AuditLogModel, User>();
+            //map2.ForAllMembers(opt => opt.Ignore());
+            //map2.ForMember(dest => dest.name, opt => opt.MapFrom(src => src.user_name));
+            //map2.ForMember(dest => dest.name, opt => opt.MapFrom(src => src.user1_name));
+            ////CreateMap<ProductModel, product>();
             //CreateMap<OrderModel, order>();
             //CreateMap<ProductOrderModel, productorder>();
 

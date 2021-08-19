@@ -19,6 +19,14 @@ namespace DAL
             return context.Users.ToList();
         }
 
+        public static List<User> GetSearchUsers(string search)
+        {
+            var list = (from p in context.Users
+                        where p.name.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+
         public static User GetUser(int id)
         {
             return context.Users.FirstOrDefault(e => e.userid == id);
