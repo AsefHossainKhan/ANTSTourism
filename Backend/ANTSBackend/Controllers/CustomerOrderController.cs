@@ -15,14 +15,29 @@ namespace ANTSBackend.Controllers
         [HttpGet]
         public List<OrderModel> GetAllOrders(int id)
         {
-            return SellerOrderService.GetAllOrders(id);
+            return CustomerService.GetAllOrders(id);
         }
 
         [Route("api/CustomerOrder/{id}")]
         [HttpGet]
         public OrderModel GetOrders(int id)
         {
-            return SellerOrderService.GetOrders(id);
+            return CustomerService.GetOrders(id);
+        }
+
+        [Route("api/{id}/Order/add")]
+        [HttpPost]
+
+        public OrderModel AddOrder(OrderModel order, int id)
+        {
+            return CustomerService.AddOrder(order, id);
+        }
+
+        [Route("api/{id}/Order/cancel/{orderid}")]
+        [HttpGet]
+        public OrderModel CancelOrder(int id, int orderid)
+        {
+            return CustomerService.CancelOrder(id, orderid);
         }
     }
 }
