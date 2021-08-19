@@ -86,9 +86,21 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             templateUrl: "views/pages/adminActions.html",
             controller: 'adminActions'
         })
-        .when("/admin/adminviewauditlog", {
+        .when("/admin/viewauditlog", {
             templateUrl: "views/pages/adminViewAuditLog.html",
             controller: 'adminViewAuditLog'
+        })
+        .when("/admin/viewcomplains", {
+            templateUrl: "views/pages/adminViewComplains.html",
+            controller: 'adminViewComplains'
+        })
+        .when("/admin/editcomplain/:id", {
+            templateUrl: "views/pages/adminEditComplain.html",
+            controller: 'adminEditComplain'
+        })
+        .when("/admin/deletecomplain/:id", {
+            templateUrl: "views/pages/adminDeleteComplain.html",
+            controller: 'adminDeleteComplain'
         })
         .otherwise({
             redirectTo: "/"

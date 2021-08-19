@@ -10,38 +10,62 @@
                 class="form-validate form-horizontal"
                 id="feedback_form"
                 name="myForm"
-                ng-submit="deleteNotice(notice)"
+                ng-submit="deleteComplain(complain)"
               >
                 <div class="form-group">
-                  <label for="usertype" class="control-label col-lg-2"
-                    >User Type</label
+                  <label for="name" class="control-label col-lg-2"
+                    >Full Name</label
                   >
                   <div class="col-lg-10">
-                    <span>{{notice.usertype}}</span>
+                    <span>{{complain.user_name}}</span>
                     <span
-                      ng-show="myForm.usertype.$touched && myForm.usertype.$error.required"
+                      ng-show="myForm.name.$touched && myForm.name.$error.required"
                       >User Type is required.</span
                     >
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="notice1" class="control-label col-lg-2"
-                    >Notice</label
+                  <label for="packagename" class="control-label col-lg-2"
+                    >Package Name</label
                   >
                   <div class="col-lg-10">
-                    <span>{{notice.notice1}}</span>
+                    <span>{{complain.package_packagename}}</span>
                     <span
-                      ng-show="myForm.notice1.$touched && myForm.notice1.$error.required"
+                      ng-show="myForm.packagename.$touched && myForm.packagename.$error.required"
+                      >User Type is required.</span
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="rating" class="control-label col-lg-2"
+                    >Rating</label
+                  >
+                  <div class="col-lg-10">
+                    <span>{{complain.rating}}</span>
+                    <span
+                      ng-show="myForm.rating.$touched && myForm.rating.$error.required"
+                      >User Type is required.</span
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="complain" class="control-label col-lg-2"
+                    >Complain</label
+                  >
+                  <div class="col-lg-10">
+                    <span>{{complain.complain}}</span>
+                    <span
+                      ng-show="myForm.complain.$touched && myForm.complain.$error.required"
                       >User Type is required.</span
                     >
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="status" class="control-label col-lg-2"
-                    >Status </label
+                    >Complain Status </label
                   >
                   <div class="col-lg-10">
-                    <span>{{notice.status}}</span>
+                    <span>{{complain.complainstatus}}</span>
                     <span
                       ng-show="myForm.status.$touched && myForm.status.$error.required"
                       >Status is required.</span
@@ -53,7 +77,7 @@
                     <button class="btn btn-primary" type="submit">
                       Delete Notice
                     </button>
-                    <a href="#!/admin/viewnotices" class="btn btn-default" type="button">
+                    <a href="#!/admin/viewcomplains" class="btn btn-default" type="button">
                       Cancel
                     </a>
                   </div>

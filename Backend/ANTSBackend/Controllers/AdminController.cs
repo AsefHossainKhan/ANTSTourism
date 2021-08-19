@@ -99,15 +99,15 @@ namespace ANTSBackend.Controllers
             return NoticeService.DeleteNotice(id);
         }
 
-        //RATINGS
-        [Route("api/ratings/all")]
+        //COMPLAINS
+        [Route("api/complains/all")]
         [HttpGet]
         public List<RatingModel> GetAllRatings()
         {
             return RatingService.GetAllRatings();
         }
 
-        [Route("api/ratings/{id}")]
+        [Route("api/complains/{id}")]
         [HttpGet]
         public RatingModel GetRating(int id)
         {
@@ -121,14 +121,14 @@ namespace ANTSBackend.Controllers
             return RatingService.AddRating(rating);
         }
 
-        [Route("api/ratings/edit")]
+        [Route("api/complains/edit")]
         [HttpPut]
         public RatingModel EditRating(RatingModel rating)
         {
             return RatingService.EditRating(rating);
         }
 
-        [Route("api/ratings/delete/{id}")]
+        [Route("api/complains/delete/{id}")]
         [HttpDelete]
         public RatingModel DeleteRating(int id)
         {
