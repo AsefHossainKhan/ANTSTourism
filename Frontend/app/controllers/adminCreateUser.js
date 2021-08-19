@@ -1,12 +1,9 @@
-app.controller("adminCreateUser", function ($scope, $http, ajax, $location) {
-  // ajax.get(API_PORT + "api/users/all", success, error);
-  // function success(response) {
-  //   $scope.users = response.data;
-  //   console.log(response.data);
-  // }
-  // function error(error) {
+app.controller("adminCreateUser", function ($scope, $http, ajax, $location, $rootScope) {
+  if ($rootScope.UserType != "Admin") {
+    $location.path("/");
+    return;
+  }
 
-  // }
   $scope.statuses = ["Valid", "Invalid", "Banned"];
 
   $scope.createUser = function (user) {

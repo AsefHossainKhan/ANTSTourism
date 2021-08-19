@@ -1,6 +1,10 @@
 app.controller(
   "adminHome",
-  function ($scope, $http, ajax, $location, $routeParams) {
+  function ($scope, $http, ajax, $location, $routeParams, $rootScope) {
+    if ($rootScope.UserType != "Admin") {
+      $location.path("/");
+    }
+    
     ajax.get(
       API_PORT + "api/orders/all",
       success,

@@ -1,6 +1,10 @@
 app.controller(
   "adminDeleteVoucher",
-  function ($scope, $http, ajax, $location, $routeParams) {
+  function ($scope, $http, ajax, $location, $routeParams, $rootScope) {
+    if ($rootScope.UserType != "Admin") {
+      $location.path("/");
+      return;
+    }
     var id = $routeParams.id;
     ajax.get(API_PORT + "api/vouchers/" + id, success, error);
     function success(response) {
@@ -12,7 +16,7 @@ app.controller(
     }
 
     $scope.deleteVoucher = function (voucher) {
-      if(confirm('Are you sure your want to delete?')) {
+      if (confirm("Are you sure your want to delete?")) {
         ajax.delete(
           API_PORT + "api/vouchers/delete/" + voucher.voucherid,
           voucher,
