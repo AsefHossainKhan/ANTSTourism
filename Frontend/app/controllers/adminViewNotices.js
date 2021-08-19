@@ -11,7 +11,7 @@ app.controller(
       $scope.notices.forEach((element) => {
         var v = new Date(element.createdat);
         element.date = v.toDateString();
-        element.time = v.toLocaleTimeString().substr(0, 10);
+        element.time = v.toLocaleTimeString();
       });
       // console.log(response.data);
     }
