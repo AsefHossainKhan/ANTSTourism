@@ -1,4 +1,4 @@
-app.controller("edit", function ($scope, $http, ajax, $routeParams) {
+app.controller("SellerPackageEdit", function ($scope, $http, ajax, $routeParams) {
     ajax.get("https://localhost:44384/api/Package/edit/" + $routeParams.id, success, error);
     function success(response) {
         $scope.packages = response.data;

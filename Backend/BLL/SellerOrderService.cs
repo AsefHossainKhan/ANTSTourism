@@ -8,30 +8,30 @@ using DAL;
 
 namespace BLL
 {
-    public class OrderService
+    public class SellerOrderService
     {
-        public static List<OrderModel> GetOrderList()
+        public static List<OrderModel> GetOrderList(int id)
         {
-            var orders = OrderRepo.GetOrder();
+            var orders = SellerOrderRepo.GetOrder(id);
             var data = AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(orders);
 
 
             return data;
         }
-        public static List<OrderModel> GetSearchOrder(string search)
+        public static List<OrderModel> GetSearchOrder(string search,int id)
         {
-            var searchPackage = OrderRepo.GetSearchOrder(search);
+            var searchPackage = SellerOrderRepo.GetSearchOrder(search,id);
             return AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(searchPackage);
         }
         public static void EditStatus(int id, string status)
         {
             //var data = AutoMapper.Mapper.Map<OrderModel, Order>(id);
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
-            OrderRepo.EditStatus(id, status);
+            SellerOrderRepo.EditStatus(id, status);
         }
         public static List<OrderModel> GetAllOrders(int id)
         {
-            var orders = OrderRepo.GetAllOrders(id);
+            var orders = SellerOrderRepo.GetAllOrders(id);
             var data = AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(orders);
             return data;
         }
@@ -39,7 +39,7 @@ namespace BLL
 
         public static OrderModel GetOrders(int id)
         {
-            var order = OrderRepo.GetOrders(id);
+            var order = SellerOrderRepo.GetOrders(id);
             return AutoMapper.Mapper.Map<Order, OrderModel>(order);
         }
     }

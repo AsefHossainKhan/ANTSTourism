@@ -8,27 +8,27 @@ using DAL;
 
 namespace BLL
 {
-    public class PackageService
+    public class SellerPackageService
     {
-        public static List<PackageModel> GetProductList()
+        public static List<PackageModel> GetAllPackages(int id)
         {
-            var products = PackageRepo.GetProducts();
+            var products = SellerPackageRepo.GetAllPackages(id);
             var data = AutoMapper.Mapper.Map<List<Package>, List<PackageModel>>(products);
 
 
             return data;
         }
 
-        public static void AddProduct(PackageModel prdct)
+        public static void AddProduct(int id,PackageModel prdct)
         {
             var data = AutoMapper.Mapper.Map<PackageModel, Package>(prdct);
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
-            PackageRepo.AddProduct(data);
+            SellerPackageRepo.AddProduct(id,data);
         }
 
         public static List<PackageModel> GetPackage(int id)
         {
-            var productOrders = PackageRepo.GetPackage(id);
+            var productOrders = SellerPackageRepo.GetPackage(id);
             return AutoMapper.Mapper.Map<List<Package>, List<PackageModel>>(productOrders);
         }
 
@@ -36,18 +36,18 @@ namespace BLL
         {
             var data = AutoMapper.Mapper.Map<PackageModel, Package>(pckage);
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
-            PackageRepo.EditPackage(id, data);
+            SellerPackageRepo.EditPackage(id, data);
         }
         public static void DeletePackage(int id)
         {
             //var data = AutoMapper.Mapper.Map<PackageModel, Package>(pckage);
             //var d = new Department() { Id = dept.Id, Name = dept.Name };
-            PackageRepo.DeletePackage(id);
+            SellerPackageRepo.DeletePackage(id);
         }
 
-        public static List<PackageModel> GetSearchPackage(string search)
+        public static List<PackageModel> GetSearchPackage(string search,int id)
         {
-            var searchPackage = PackageRepo.GetSearchPackage(search);
+            var searchPackage = SellerPackageRepo.GetSearchPackage(search,id);
             return AutoMapper.Mapper.Map<List<Package>, List<PackageModel>>(searchPackage);
         }
     }
