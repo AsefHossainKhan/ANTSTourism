@@ -81,6 +81,7 @@
     <Compile Include="Blog.cs">
       <DependentUpon>ANTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContextClass.cs" />
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="NoticeRepo.cs" />
     <Compile Include="SellerOrderRepo.cs" />

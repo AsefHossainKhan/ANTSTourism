@@ -8,22 +8,22 @@ namespace DAL
 {
     public class AuditLogRepo
     {
-        static ANTSEntities context;
-        static AuditLogRepo()
-        {
-            context = new ANTSEntities();
-        }
+        //static ANTSEntities ContextClass.context;
+        //static AuditLogRepo()
+        //{
+        //    ContextClass.context = new ANTSEntities();
+        //}
 
         public static Auditlog AddAuditLog(Auditlog a)
         {
-            context.Auditlogs.Add(a);
-            context.SaveChanges();
+            ContextClass.context.Auditlogs.Add(a);
+            ContextClass.context.SaveChanges();
             return a;
         }
 
         public static List<Auditlog> GetAllAuditLogs()
         {
-            return context.Auditlogs.ToList();
+            return ContextClass.context.Auditlogs.ToList();
         }
 
 

@@ -105,13 +105,14 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         .when("/admin/deletecomplain/:id", {
             templateUrl: "views/pages/adminDeleteComplain.html",
             controller: 'adminDeleteComplain'
+        })
         .when("/seller/dashboard", {
             templateUrl: "views/pages/SellerDashboard.html",
             controller: 'SellerDashboard'
         })
         .otherwise({
             redirectTo: "/"
-        });
+        })
     //$locationProvider.html5Mode(true);
     //$locationProvider.hashPrefix('');
     //if(window.history && window.history.pushState){

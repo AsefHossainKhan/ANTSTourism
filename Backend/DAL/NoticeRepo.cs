@@ -8,20 +8,21 @@ namespace DAL
 {
     public class NoticeRepo
     {
-        static ANTSEntities context;
-        static NoticeRepo()
-        {
-            context = new ANTSEntities();
-        }
+        //static ANTSEntities ContextClass.context;
+        //static NoticeRepo()
+        //{
+        //    ContextClass.context = new ANTSEntities();
+        //}
+
 
         public static List<Notice> GetAllNotices()
         {
-            return context.Notices.ToList();
+            return ContextClass.context.Notices.ToList();
         }
 
         public static List<Notice> GetSearchNotices(string search)
         {
-            var list = (from p in context.Notices
+            var list = (from p in ContextClass.context.Notices
                         where p.notice1.Contains(search)
                         select p).ToList();
             return list;
@@ -29,29 +30,29 @@ namespace DAL
 
         public static Notice GetNotice(int id)
         {
-            return context.Notices.FirstOrDefault(e => e.noticeid == id);
+            return ContextClass.context.Notices.FirstOrDefault(e => e.noticeid == id);
         }
 
         public static Notice AddNotice(Notice n)
         {
-            context.Notices.Add(n);
-            context.SaveChanges();
+            ContextClass.context.Notices.Add(n);
+            ContextClass.context.SaveChanges();
             return n;
         }
 
         public static Notice EditNotice(Notice n)
         {
-            var notice = context.Notices.FirstOrDefault(e => e.noticeid == n.noticeid);
-            context.Entry(notice).CurrentValues.SetValues(n);
-            context.SaveChanges();
+            var notice = ContextClass.context.Notices.FirstOrDefault(e => e.noticeid == n.noticeid);
+            ContextClass.context.Entry(notice).CurrentValues.SetValues(n);
+            ContextClass.context.SaveChanges();
             return notice;
         }
 
         public static Notice DeleteNotice(int id)
         {
-            var notice = context.Notices.FirstOrDefault(e => e.noticeid == id);
-            context.Notices.Remove(notice);
-            context.SaveChanges();
+            var notice = ContextClass.context.Notices.FirstOrDefault(e => e.noticeid == id);
+            ContextClass.context.Notices.Remove(notice);
+            ContextClass.context.SaveChanges();
             return notice;
         }
     }
