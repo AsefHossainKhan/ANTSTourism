@@ -106,6 +106,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             templateUrl: "views/pages/adminDeleteComplain.html",
             controller: 'adminDeleteComplain'
         })
+        .when("/admin/", {
+            templateUrl: "views/pages/adminHome.html",
+            controller: 'adminHome'
+        })
         .when("/seller/dashboard", {
             templateUrl: "views/pages/SellerDashboard.html",
             controller: 'SellerDashboard'
@@ -123,8 +127,8 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
 
 app.controller("myController", function ($rootScope) {
-    $rootScope.isUserSeller = true;
-    $rootScope.isUserAdmin = false;
+    $rootScope.isUserSeller = false;
+    $rootScope.isUserAdmin = true;
     $rootScope.isUserLoggedIn = false;
 
     $rootScope.UserId="";

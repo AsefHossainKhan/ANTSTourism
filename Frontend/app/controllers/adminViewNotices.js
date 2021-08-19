@@ -2,7 +2,12 @@ app.controller("adminViewNotices", function ($scope, $http, ajax,$location) {
   ajax.get(API_PORT + "api/notices/all", success, error);
   function success(response) {
     $scope.notices = response.data;
-    console.log(response.data);
+    $scope.notices.forEach(element => {
+      var v = new Date(element.createdat);
+      element.date = v.toDateString();
+      element.time = v.toLocaleTimeString().substr(0,10);
+    });
+    // console.log(response.data);
   }
   function error(error) {
 

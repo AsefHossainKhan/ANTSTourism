@@ -2,7 +2,12 @@ app.controller("adminViewAuditLog", function ($scope, $http, ajax,$location) {
   ajax.get(API_PORT + "api/auditlogs/all", success, error);
   function success(response) {
     $scope.auditlogs = response.data;
-    console.log(response.data);
+    $scope.auditlogs.forEach(element => {
+      var v = new Date(element.createdat);
+      element.date = v.toDateString();
+      element.time = v.toLocaleTimeString().substr(0,10);
+    });
+    // console.log(response.data);
   }
   function error(error) {
 
