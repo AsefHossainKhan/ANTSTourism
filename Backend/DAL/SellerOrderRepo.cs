@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class OrderRepo
+    public class SellerOrderRepo
     {
         static ANTSEntities context;
-        static OrderRepo()
+        static SellerOrderRepo()
         {
             context = new ANTSEntities();
         }
 
         //BLONDE CHEF
-        public static List<Order> GetOrder()
+        public static List<Order> GetOrder(int id)
         {
             var list = (from p in context.Orders
-                        where p.sellerid == 8
+                        where p.sellerid == id
                         select p).ToList();
             return list;
         }
-        public static List<Order> GetSearchOrder(string search)
+        public static List<Order> GetSearchOrder(string search,int id)
         {
             var list = (from p in context.Orders
                         where p.ordername.Contains(search)
+                        where p.sellerid == id
                         select p).ToList();
             return list;
         }

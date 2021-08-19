@@ -15,7 +15,6 @@ namespace BLL
             var users = UserRepo.GetAllUsers();
             return AutoMapper.Mapper.Map<List<User>, List<UserModel>>(users);
         }
-
         public static UserModel GetUser(int id)
         {
             var user = UserRepo.GetUser(id);

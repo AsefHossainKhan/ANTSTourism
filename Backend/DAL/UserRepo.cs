@@ -18,7 +18,6 @@ namespace DAL
         {
             return context.Users.ToList();
         }
-
         public static User GetUser(int id)
         {
             return context.Users.FirstOrDefault(e => e.userid == id);

@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PackageRepo
+    public class SellerPackageRepo
     {
         static ANTSEntities context;
-        static PackageRepo()
+        static SellerPackageRepo()
         {
             context = new ANTSEntities();
         }
 
-        public static List<Package> GetProducts()
+        public static List<Package> GetAllPackages(int id)
         {
             //return context.Packages.ToList();
             //  var id = Convert.ToInt32(Session["id"].ToString());
             var list = (from p in context.Packages
-                        where p.userid == 8
+                        where p.userid == id
                         select p).ToList();
             return list;
         }
-        public static void AddProduct(Package d)
+        public static void AddProduct(int id,Package d)
         {
             d.createdat = DateTime.Now;
             d.approvestatus = "pending";
-            d.userid = 8;
+            d.userid = id;
             context.Packages.Add(d);
             context.SaveChanges();
         }
@@ -55,10 +55,11 @@ namespace DAL
             context.Packages.Remove(pr);
             context.SaveChanges();
         }
-        public static List<Package> GetSearchPackage(string search)
+        public static List<Package> GetSearchPackage(string search,int id)
         {
             var list = (from p in context.Packages
                         where p.packagename.Contains(search)
+                        where p.userid==id
                         select p).ToList();
             return list;
         }

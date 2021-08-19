@@ -22,3 +22,9 @@ J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.AssemblyReference.c
 J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
 J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
 J:\Atp2FINALNEW\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\bin\Debug\BEL.dll
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\bin\Debug\BEL.pdb
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
+J:\ATP2ProjectClone\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb

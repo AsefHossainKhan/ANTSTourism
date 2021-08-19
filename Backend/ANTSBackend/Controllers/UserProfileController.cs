@@ -17,6 +17,7 @@ namespace ANTSBackend.Controllers
         {
             return UserService.GetUser(id);
         }
+
         [Route("api/User/edit")]
         [HttpPost]
         public void Edit(UserModel prdct)
@@ -24,14 +25,13 @@ namespace ANTSBackend.Controllers
             UserService.EditUser(prdct);
         }
 
-        public class LoginController : ApiController
+
+        [Route("api/Login/{mail}/{pass}")]
+        [HttpGet]
+        public UserModel Login(string mail, string pass)
         {
-            [Route("api/Login/{mail}/{pass}")]
-            [HttpGet]
-            public UserModel Login(string mail, string pass)
-            {
-                return UserService.GetUserlogin(mail, pass);
-            }
+           return UserService.GetUserlogin(mail, pass);
         }
+       
     }
 }
