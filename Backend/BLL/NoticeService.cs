@@ -16,6 +16,12 @@ namespace BLL
             return AutoMapper.Mapper.Map<List<Notice>, List<NoticeModel>>(notices);
         }
 
+        public static List<NoticeModel> GetSearchNotices(string search)
+        {
+            var notices = NoticeRepo.GetSearchNotices(search);
+            return AutoMapper.Mapper.Map<List<Notice>, List<NoticeModel>>(notices);
+        }
+
         public static NoticeModel GetNotice(int id)
         {
             var notice = NoticeRepo.GetNotice(id);

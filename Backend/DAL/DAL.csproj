@@ -77,14 +77,17 @@
     <Compile Include="Auditlog.cs">
       <DependentUpon>ANTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="AuditLogRepo.cs" />
     <Compile Include="Blog.cs">
       <DependentUpon>ANTS.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContextClass.cs" />
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="NoticeRepo.cs" />
-    <Compile Include="OrderRepo.cs" />
-    <Compile Include="PackageRepo.cs" />
+    <Compile Include="SellerOrderRepo.cs" />
+    <Compile Include="SellerPackageRepo.cs" />
     <Compile Include="RatingRepo.cs" />
+    <Compile Include="SellerProfileRepo.cs" />
     <Compile Include="UserRepo.cs" />
     <Compile Include="Notice.cs">
       <DependentUpon>ANTS.tt</DependentUpon>

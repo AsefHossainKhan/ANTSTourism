@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountModel.cs" />
+    <Compile Include="AuditLogModel.cs" />
     <Compile Include="BlogsModel.cs" />
     <Compile Include="CustomerDetails.cs" />
     <Compile Include="NoticeModel.cs" />

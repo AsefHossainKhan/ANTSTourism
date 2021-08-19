@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html lang="en" dir="ltr">
+  <head>
+    <!--<base href="/" />-->
+    <meta charset="utf-8" />
+    <script src="app/lib/angular.min.js"></script>
+
+    <script src="app/lib/angular.route.min.js"></script>
+    <script src="app/app.js"></script>
+    <!-- Don't know where this link points to -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../plugins/images/favicon.png"
+    />
+
+    <link
+      href="content/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="content/css/animate.css" rel="stylesheet" />
+    <link href="content/css/style_admin.css" rel="stylesheet" />
+    <link href="content/css/colors/default.css" id="theme" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script href="content/bootstrap/js/modal.js"></script>
+
+    <!-- ADMIN LINKS -->
+    <!-- Bootstrap CSS -->
+    <link href="content/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- bootstrap theme -->
+    <link href="content/admin/css/bootstrap-theme.css" rel="stylesheet" />
+    <!--external css-->
+    <!-- font icon -->
+    <link href="content/admin/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="content/admin/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="content/admin/css/style.css" rel="stylesheet" />
+    <link href="content/admin/css/style-responsive.css" rel="stylesheet" />
+
+    <title></title>
+  </head>
+
+  <body ng-app="myApp" ng-controller="myController">
+    <div ng-if="isUserSeller" ng-include="'views/inc/top_nav.html'"></div>
+    <div ng-if="isUserSeller" ng-include="'views/inc/side_nav.html'"></div>
+    <div ng-if="isUserAdmin" ng-include="'views/inc/admin_top.html'"></div>
+    <div ng-if="isUserAdmin" ng-include="'views/inc/admin_side.html'"></div>
+    -->
+    <div ng-view></div>
+
+    <!-- ADMIN LINKS -->
+    <!-- javascripts -->
+    <script src="content/admin/js/jquery.js"></script>
+    <script src="content/admin/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="content/admin/js/jquery.scrollTo.min.js"></script>
+    <script
+      src="content/admin/js/jquery.nicescroll.js"
+      type="text/javascript"
+    ></script>
+    <!--custome script for all page-->
+    <script src="content/admin/js/scripts.js"></script>
+  </body>
 </html>
+
+<!-- Add Services here -->
+<script src="app/services/ajax.js"></script>
+
+<!-- Add Controllers here -->
+<!-- <script src="app/controllers/login.js"></script> -->
+
+<!-- <script src="app/controllers/showcategories.js"></script>
+<script src="app/controllers/addcategory.js"></script>
+<script src="app/controllers/showproducts.js"></script>
+<script src="app/controllers/addpackage.js"></script>
+<script src="app/controllers/showorder.js"></script>
+<script src="app/controllers/orderdetails.js"></script>
+<script src="app/controllers/myprofile.js"></script> -->
+
+<!-- ADMIN CONTROLLERS -->
+<script src="app/controllers/adminViewUsers.js"></script>
+<script src="app/controllers/adminCreateUser.js"></script>
+<script src="app/controllers/adminEditUser.js"></script>
+<script src="app/controllers/adminDeleteUser.js"></script>
+<script src="app/controllers/adminViewNotices.js"></script>
+<script src="app/controllers/adminCreateNotice.js"></script>
+<script src="app/controllers/adminEditNotice.js"></script>
+<script src="app/controllers/adminDeleteNotice.js"></script>
+<script src="app/controllers/adminViewVouchers.js"></script>
+<script src="app/controllers/adminCreateVoucher.js"></script>
+<script src="app/controllers/adminEditVoucher.js"></script>
+<script src="app/controllers/adminDeleteVoucher.js"></script>
+<script src="app/controllers/adminActions.js"></script>
+<script src="app/controllers/adminViewAuditLog.js"></script>
+<script src="app/controllers/adminViewComplains.js"></script>
+<script src="app/controllers/adminEditComplain.js"></script>
+<script src="app/controllers/adminDeleteComplain.js"></script>
+<script src="app/controllers/home.js"></script>
+<script src="app/controllers/products.js"></script>
+<script src="app/controllers/addproduct.js"></script>
+<script src="app/controllers/login.js"></script>
+<!-- Seller controllers -->
+<script src="app/controllers/SellerAddPackage.js"></script>
+<script src="app/controllers/SellerShowPackages.js"></script>
+<script src="app/controllers/SellerPackageEdit.js"></script>
+<script src="app/controllers/SellerShowOrder.js"></script>
+<script src="app/controllers/SellerProfile.js"></script>
+<script src="app/controllers/SellerHome.js"></script>
