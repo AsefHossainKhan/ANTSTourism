@@ -49,21 +49,21 @@ namespace ANTSBackend.Controllers
 
         public BlogsModel AddBlogs(BlogsModel blogs)
         {
-            return BlogsService.AddBlogs(blogs);
+            return CustomerService.AddBlogs(blogs);
         }
 
         [Route("api/Blogs/edit/{id}")]
         [HttpPost]
         public BlogsModel EditBlogs(BlogsModel blogs)
         {
-            return BlogsService.EditBlogs(blogs);
+            return CustomerService.EditBlogs(blogs);
         }
 
         [Route("api/Blogs/delete/{id}")]
         [HttpGet]
         public BlogsModel DeleteBlog(int id)
         {
-            return BlogsService.DeleteBlogs(id);
+            return CustomerService.DeleteBlogs(id);
         }
     }
 }

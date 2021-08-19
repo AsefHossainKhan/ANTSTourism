@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlogsService.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="NoticeService.cs" />
     <Compile Include="OrderService.cs" />
+    <Compile Include="PackageService.cs" />
     <Compile Include="RatingService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="MapperConfig\AutoMapperSettings.cs" />

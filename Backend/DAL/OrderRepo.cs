@@ -14,33 +14,39 @@ namespace DAL
             context = new ANTSEntities();
         }
 
+        //BLONDE CHEF
+        public static List<Order> GetOrder()
+        {
+            var list = (from p in context.Orders
+                        where p.sellerid == 8
+                        select p).ToList();
+            return list;
+        }
+        public static List<Order> GetSearchOrder(string search)
+        {
+            var list = (from p in context.Orders
+                        where p.ordername.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+        public static void EditStatus(int id, string status)
+        {
+            var oldp = context.Orders.FirstOrDefault(e => e.orderid == id);
+            oldp.status = status;
+
+            context.SaveChanges();
+        }
+
+        //NUSHRAT APA
         public static List<Order> GetAllOrders(int id)
         {
             return context.Orders.Where(e => e.customerid == id).ToList();
         }
 
-     
+
         public static Order GetOrders(int id)
         {
             return context.Orders.FirstOrDefault(e => e.orderid == id);
-        }
-
-        public static Order AddOrder(Order o, int id)
-        {
-            o.createdat = DateTime.Now;
-            o.customerid = id;
-            o.status = "unsold";
-            context.Orders.Add(o);
-            context.SaveChanges();
-            return o; ;
-        }
-
-        public static object CancelOrder(int id, int orderid)
-        {
-            var data = context.Orders.FirstOrDefault(e => e.orderid == orderid);
-            data.status = "cancelled";
-            context.SaveChanges();
-            return data; ;
         }
     }
 }
