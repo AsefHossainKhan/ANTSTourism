@@ -1,90 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <!--<base href="/" />-->
+    <meta charset="utf-8" />
+    <script src="app/lib/angular.min.js"></script>
 
-<head>
-  <!--<base href="/" />-->
-  <meta charset="utf-8" />
-  <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/angular.route.min.js"></script>
+    <script src="app/app.js"></script>
+    <!-- Don't know where this link points to -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../plugins/images/favicon.png"
+    />
 
-  <script src="app/lib/angular.route.min.js"></script>
-  <script src="app/app.js"></script>
-  <!-- Don't know where this link points to -->
-  <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png" />
+    <link
+      href="content/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="content/css/animate.css" rel="stylesheet" />
+    <link href="content/css/style_admin.css" rel="stylesheet" />
+    <link href="content/css/colors/default.css" id="theme" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script href="content/bootstrap/js/modal.js"></script>
 
-  <link href="content/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="content/css/animate.css" rel="stylesheet" />
-  <link href="content/css/style_admin.css" rel="stylesheet" />
-  <link href="content/css/colors/default.css" id="theme" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script href="content/bootstrap/js/modal.js"></script>
+    <!-- ADMIN LINKS -->
+    <!-- Bootstrap CSS -->
+    <link href="content/admin/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- bootstrap theme -->
+    <link href="content/admin/css/bootstrap-theme.css" rel="stylesheet" />
+    <!--external css-->
+    <!-- font icon -->
+    <link href="content/admin/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="content/admin/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="content/admin/css/style.css" rel="stylesheet" />
+    <link href="content/admin/css/style-responsive.css" rel="stylesheet" />
 
-  <!-- ADMIN LINKS -->
-  <!-- Bootstrap CSS -->
-  <link href="content/admin/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- bootstrap theme -->
-  <link href="content/admin/css/bootstrap-theme.css" rel="stylesheet" />
-  <!--external css-->
-  <!-- font icon -->
-  <link href="content/admin/css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="content/admin/css/font-awesome.min.css" rel="stylesheet" />
-  <!-- Custom styles -->
-  <link href="content/admin/css/style.css" rel="stylesheet" />
-  <link href="content/admin/css/style-responsive.css" rel="stylesheet" />
-
-  <title></title>
-</head>
-
-
-<body ng-app="myApp" ng-controller="myController">
-  <div ng-if="isUserSeller" ng-include="'views/inc/top_nav.html'"></div>
-  <div ng-if="isUserSeller" ng-include="'views/inc/side_nav.html'"></div>
-  <div ng-if="isUserAdmin" ng-include="'views/inc/admin_top.html'"></div>
-  <div ng-if="isUserAdmin" ng-include="'views/inc/admin_side.html'"></div> -->
-  <div ng-view></div>
-
-  <!-- ADMIN LINKS -->
-  <!-- javascripts -->
-  <script src="content/admin/js/jquery.js"></script>
-  <script src="content/admin/js/bootstrap.min.js"></script>
-  <!-- nice scroll -->
-  <script src="content/admin/js/jquery.scrollTo.min.js"></script>
-  <script src="content/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--custome script for all page-->
-  <script src="content/admin/js/scripts.js"></script>
-</body>
     <title></title>
   </head>
-  <body ng-app="myApp" ng-controller="myController">
-    <div class="cpm">
-      <div ng-if="isUserSeller" ng-include="'views/inc/top_nav.html'"></div>
-      <div ng-if="isUserSeller" ng-include="'views/inc/side_nav.html'"></div>
-      <div ng-if="isUserAdmin" ng-include="'views/inc/admin_top.html'"></div>
-      <div ng-if="isUserAdmin" ng-include="'views/inc/admin_side.html'"></div>
-      <div ng-view></div>
-    </div>
 
+  <body ng-app="myApp" ng-controller="myController">
+    <div ng-if="isUserSeller" ng-include="'views/inc/top_nav.html'"></div>
+    <div ng-if="isUserSeller" ng-include="'views/inc/side_nav.html'"></div>
+    <div ng-if="isUserAdmin" ng-include="'views/inc/admin_top.html'"></div>
+    <div ng-if="isUserAdmin" ng-include="'views/inc/admin_side.html'"></div>
+    -->
+    <div ng-view></div>
+
+    <!-- ADMIN LINKS -->
+    <!-- javascripts -->
+    <script src="content/admin/js/jquery.js"></script>
+    <script src="content/admin/js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="content/admin/js/jquery.scrollTo.min.js"></script>
+    <script
+      src="content/admin/js/jquery.nicescroll.js"
+      type="text/javascript"
+    ></script>
+    <!--custome script for all page-->
+    <script src="content/admin/js/scripts.js"></script>
+  </body>
 </html>
 
 <!-- Add Services here -->
 <script src="app/services/ajax.js"></script>
 
 <!-- Add Controllers here -->
-<!-- <script src="app/controllers/home.js"></script>
-<script src="app/controllers/products.js"></script>
-<script src="app/controllers/addproduct.js"></script>
 <script src="app/controllers/login.js"></script>
-<script src="app/controllers/addproduct.js"></script> -->
 
-<script src="app/controllers/edit.js"></script>
-<!-- <script src="app/controllers/delete.js"></script> -->
-<script src="app/controllers/showcategories.js"></script>
+<!-- <script src="app/controllers/showcategories.js"></script>
 <script src="app/controllers/addcategory.js"></script>
 <script src="app/controllers/showproducts.js"></script>
 <script src="app/controllers/addpackage.js"></script>
 <script src="app/controllers/showorder.js"></script>
 <script src="app/controllers/orderdetails.js"></script>
-<script src="app/controllers/myprofile.js"></script>
+<script src="app/controllers/myprofile.js"></script> -->
 
 <!-- ADMIN CONTROLLERS -->
 <script src="app/controllers/adminViewUsers.js"></script>

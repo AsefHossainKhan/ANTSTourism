@@ -116,6 +116,6 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
 app.controller("myController", function ($rootScope) {
     $rootScope.isUserSeller = false;
-    $rootScope.isUserAdmin = false;
+    $rootScope.isUserAdmin = true;
     $rootScope.isUserLoggedIn = false;
 })

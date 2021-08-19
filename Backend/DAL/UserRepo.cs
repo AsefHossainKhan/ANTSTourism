@@ -54,7 +54,7 @@ namespace DAL
             context.SaveChanges();
             return user;
         }
-        public static object GetUserLogin(string mail, string pass)
+        public static User GetUserLogin(string mail, string pass)
         {
             var usercheck = context.Users.FirstOrDefault(e => e.email == mail && e.password == pass);
             if (usercheck != null)
