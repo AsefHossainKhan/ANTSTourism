@@ -1,6 +1,9 @@
 app.controller(
   "adminHome",
   function ($scope, $http, ajax, $location, $routeParams, $rootScope) {
+  $rootScope.PageType = "admin";
+  console.log($rootScope.PageType);
+
     if ($rootScope.UserType != "Admin") {
       $location.path("/");
     }

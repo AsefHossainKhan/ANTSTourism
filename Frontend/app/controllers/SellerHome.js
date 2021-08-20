@@ -1,4 +1,7 @@
 app.controller("SellerHome", function ($scope, ajax, $rootScope) {
+    $rootScope.UserType = "Seller";
+    $rootScope.PageType = "seller";
+    
     console.log($rootScope.UserName);
     $scope.name = $rootScope.UserName;
     console.log($scope.name);

@@ -25,12 +25,25 @@ namespace ANTSBackend.Controllers
             UserService.EditUser(prdct);
         }
 
-        [Route("api/Login/{mail}/{pass}")]
-        [HttpGet]
-        public UserModel Login(string mail, string pass)
+        [Route("api/Login")]
+        [HttpPost]
+        public UserModel Login(UserModel user)
         {
-           return UserService.GetUserlogin(mail, pass);
+            if (user == null)
+            {
+                return null;
+            }
+            return UserService.GetUserlogin(user.email, user.password);
         }
-       
+
+        [Route("api/registration")]
+        [HttpPost]
+        public UserModel AddUser(UserModel user)
+        {
+            user.status = "Active";
+            user.createdat = DateTime.Now;
+            return UserService.AddUser(user);
+        }
+
     }
 }

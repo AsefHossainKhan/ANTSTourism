@@ -3,15 +3,15 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
   //   $location.path("");
   //   return;
   // }
-  $scope.login = function () {
+  $rootScope.PageType = "login";
+  console.log($rootScope.PageType);
+  $scope.login = function (user) {
     // console.log("ashsi");
     // console.log($scope.Email);
-    console.log($rootScope.UserType);
-    ajax.get(
-      "https://localhost:44384/api/Login/" +
-      $scope.Email +
-      "/" +
-      $scope.Password,
+    // console.log($rootScope.UserType);
+    
+    ajax.post(
+      "https://localhost:44384/api/Login", user,
       function (response) {
         // console.log(response);
         $scope.user = response.data;
@@ -29,9 +29,6 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
           // console.log($rootScope.UserName);
           //set login status
           if ($scope.user.usertype == "Seller") {
-            $rootScope.isUserLoggedIn = true;
-            // console.log($scope.user);
-            //$rootScope.isUserSeller = true;
             $rootScope.isUserLoggedIn = true;
             window.location.href =
               "http://127.0.0.1:5502/Index.html#!/SellerHome";

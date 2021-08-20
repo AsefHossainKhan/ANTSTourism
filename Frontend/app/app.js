@@ -6,8 +6,8 @@ app.config([
   function ($routeProvider, $locationProvider) {
     $routeProvider
       .when("/", {
-        templateUrl: "views/pages/login.html",
-        controller: "login",
+        templateUrl: "views/pages/home.html",
+        controller: "home",
       })
       .when("/seller/package/edit/:id", {
         templateUrl: "views/pages/SellerPackageEdit.html",
@@ -121,6 +121,10 @@ app.config([
         templateUrl: "views/pages/logout.html",
         controller: "logout",
       })
+      .when("/registration", {
+        templateUrl: "views/pages/registration.html",
+        controller: "registration",
+      })
       .otherwise({
         redirectTo: "/",
       });
@@ -134,6 +138,7 @@ app.config([
 
 app.controller("myController", function ($rootScope) {
   $rootScope.isUserLoggedIn = false;
+  $rootScope.PageType = "home";
 
   $rootScope.UserId = "";
   $rootScope.UserType = "";
