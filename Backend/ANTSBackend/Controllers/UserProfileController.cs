@@ -25,7 +25,6 @@ namespace ANTSBackend.Controllers
             UserService.EditUser(prdct);
         }
 
-
         [Route("api/Login/{mail}/{pass}")]
         [HttpGet]
         public UserModel Login(string mail, string pass)

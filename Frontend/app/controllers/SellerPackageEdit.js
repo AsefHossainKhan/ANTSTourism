@@ -27,6 +27,7 @@ app.controller("SellerPackageEdit", function ($scope, $http, ajax, $routeParams)
             function (response) {
                 console.log(response);
                 alert("edited");
+                window.location.href = "http://127.0.0.1:5502/Index.html#!/seller/showpackages";
             },
             function (err) {
                 console.log(err);

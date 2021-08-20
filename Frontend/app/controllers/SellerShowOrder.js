@@ -1,4 +1,8 @@
-app.controller("SellerShowOrder", function ($scope, $http, ajax,$rootScope) {
+app.controller("SellerShowOrder", function ($scope, $http, ajax, $rootScope) {
+  if ($rootScope.UserType != "Seller") {
+    $location.path("/");
+    return;
+  }
   ajax.get("https://localhost:44384/api/Order/GetAll/" + $rootScope.UserId, success, error);
   function success(response) {
     $scope.orders = response.data;
@@ -28,7 +32,7 @@ app.controller("SellerShowOrder", function ($scope, $http, ajax,$rootScope) {
   }
   $scope.Search = function () {
     console.log("ashsi");
-    ajax.get("https://localhost:44384/api/Order/Search/" + $scope.search+"/"+$rootScope.UserId,
+    ajax.get("https://localhost:44384/api/Order/Search/" + $scope.search + "/" + $rootScope.UserId,
       function success(response) {
         $scope.orders = response.data;
       },
@@ -44,7 +48,7 @@ app.controller("SellerShowOrder", function ($scope, $http, ajax,$rootScope) {
       $scope.orders = response.data;
     }
     function error(error) {
-  
+
     }
   }
 });

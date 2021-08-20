@@ -19,6 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script href="content/bootstrap/js/modal.js"></script>
 
+
   <!-- ADMIN LINKS -->
   <!-- Bootstrap CSS -->
   <link href="content/admin/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,16 +32,20 @@
   <!-- Custom styles -->
   <link href="content/admin/css/style.css" rel="stylesheet" />
   <link href="content/admin/css/style-responsive.css" rel="stylesheet" />
+  <!-- Login -->
+  <link href="content/css/login.css" rel="stylesheet" />
+
+
+
 
   <title></title>
 </head>
 
-
 <body ng-app="myApp" ng-controller="myController">
-  <div ng-if="isUserSeller" ng-include="'views/inc/top_nav.html'"></div>
-  <div ng-if="isUserSeller" ng-include="'views/inc/side_nav.html'"></div>
-  <div ng-if="isUserAdmin" ng-include="'views/inc/admin_top.html'"></div>
-  <div ng-if="isUserAdmin" ng-include="'views/inc/admin_side.html'"></div>
+  <div ng-if="UserType === 'Seller'" ng-include="'views/inc/top_nav.html'"></div>
+  <div ng-if="UserType === 'Seller'" ng-include="'views/inc/side_nav.html'"></div>
+  <div ng-if="UserType === 'Admin'" ng-include="'views/inc/admin_top.html'"></div>
+  <div ng-if="UserType === 'Admin'" ng-include="'views/inc/admin_side.html'"></div>
   <div ng-view></div>
 
   <!-- ADMIN LINKS -->
@@ -60,10 +65,44 @@
 <script src="app/services/ajax.js"></script>
 
 <!-- Add Controllers here -->
-<script src="app/controllers/home.js"></script>
+<!-- <script src="app/controllers/login.js"></script> -->
+
+<!-- <script src="app/controllers/showcategories.js"></script>
+<script src="app/controllers/addcategory.js"></script>
+<script src="app/controllers/showproducts.js"></script>
+<script src="app/controllers/addpackage.js"></script>
+<script src="app/controllers/showorder.js"></script>
+<script src="app/controllers/orderdetails.js"></script>
+<script src="app/controllers/myprofile.js"></script> -->
+
+<!-- ADMIN CONTROLLERS -->
+<script src="app/controllers/adminViewUsers.js"></script>
+<script src="app/controllers/adminCreateUser.js"></script>
+<script src="app/controllers/adminEditUser.js"></script>
+<script src="app/controllers/adminDeleteUser.js"></script>
+<script src="app/controllers/adminViewNotices.js"></script>
+<script src="app/controllers/adminCreateNotice.js"></script>
+<script src="app/controllers/adminEditNotice.js"></script>
+<script src="app/controllers/adminDeleteNotice.js"></script>
+<script src="app/controllers/adminViewVouchers.js"></script>
+<script src="app/controllers/adminCreateVoucher.js"></script>
+<script src="app/controllers/adminEditVoucher.js"></script>
+<script src="app/controllers/adminDeleteVoucher.js"></script>
+<script src="app/controllers/adminActions.js"></script>
+<script src="app/controllers/adminViewAuditLog.js"></script>
+<script src="app/controllers/adminViewComplains.js"></script>
+<script src="app/controllers/adminEditComplain.js"></script>
+<script src="app/controllers/adminDeleteComplain.js"></script>
+<script src="app/controllers/adminHome.js"></script>
+
+
+
 <script src="app/controllers/products.js"></script>
-<script src="app/controllers/addproduct.js"></script>
 <script src="app/controllers/login.js"></script>
+<script src="app/controllers/logout.js"></script>
+<script src="app/controllers/registration.js"></script>
+
+
 <!-- Seller controllers -->
 <script src="app/controllers/SellerAddPackage.js"></script>
 <script src="app/controllers/SellerShowPackages.js"></script>
@@ -71,3 +110,7 @@
 <script src="app/controllers/SellerShowOrder.js"></script>
 <script src="app/controllers/SellerProfile.js"></script>
 <script src="app/controllers/SellerHome.js"></script>
+<script src="app/controllers/SellerDashboard.js"></script>
+
+
+<script href="content/js/login.js"></script>

@@ -44,6 +44,10 @@ namespace DAL
             return context.Orders.Where(e => e.customerid == id).ToList();
         }
 
+        public static List<Order> GetFullOrders()
+        {
+            return context.Orders.ToList();
+        }
 
         public static Order GetOrders(int id)
         {

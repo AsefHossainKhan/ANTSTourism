@@ -58,3 +58,15 @@ J:\ATP2ProjectClone\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CoreCompileInpu
 J:\ATP2ProjectClone\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
 J:\ATP2ProjectClone\ANTSTourism\Backend\DAL\obj\Debug\DAL.dll
 J:\ATP2ProjectClone\ANTSTourism\Backend\DAL\obj\Debug\DAL.pdb
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll.config
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\DAL.dll
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\DAL.pdb
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.dll
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.dll
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.xml
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\bin\Debug\EntityFramework.SqlServer.xml
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\obj\Debug\DAL.csproj.CopyComplete
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\obj\Debug\DAL.dll
+J:\atp2baalsaal\ANTSTourism\Backend\DAL\obj\Debug\DAL.pdb

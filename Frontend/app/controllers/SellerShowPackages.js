@@ -1,5 +1,9 @@
-app.controller("SellerShowPackages", function ($scope, $http, ajax,$rootScope) {
-  ajax.get("https://localhost:44384/api/Package/GetAll/"+$rootScope.UserId, success, error);
+app.controller("SellerShowPackages", function ($scope, $http, ajax, $rootScope) {
+  if ($rootScope.UserType != "Seller") {
+    $location.path("/");
+    return;
+  }
+  ajax.get("https://localhost:44384/api/Package/GetAll/" + $rootScope.UserId, success, error);
   function success(response) {
     $scope.products = response.data;
   }
@@ -20,12 +24,12 @@ app.controller("SellerShowPackages", function ($scope, $http, ajax,$rootScope) {
         function (err) {
           console.log(err);
           alert("deleted");
-          ajax.get("https://localhost:44384/api/Package/GetAll/"+$rootScope.UserId, success, error);
+          ajax.get("https://localhost:44384/api/Package/GetAll/" + $rootScope.UserId, success, error);
           function success(response) {
             $scope.products = response.data;
           }
           function error(error) {
-        
+
           }
 
         }
@@ -35,7 +39,7 @@ app.controller("SellerShowPackages", function ($scope, $http, ajax,$rootScope) {
 
   $scope.Search = function () {
     console.log("ashsi");
-    ajax.get("https://localhost:44384/api/Package/Search/" + $scope.search+"/"+$rootScope.UserId,
+    ajax.get("https://localhost:44384/api/Package/Search/" + $scope.search + "/" + $rootScope.UserId,
       function success(response) {
         $scope.products = response.data;
       },
@@ -46,7 +50,7 @@ app.controller("SellerShowPackages", function ($scope, $http, ajax,$rootScope) {
   }
 
   $scope.ShowAll = function () {
-    ajax.get("https://localhost:44384/api/Package/GetAll/"+$rootScope.UserId, success, error);
+    ajax.get("https://localhost:44384/api/Package/GetAll/" + $rootScope.UserId, success, error);
     function success(response) {
       $scope.products = response.data;
     }

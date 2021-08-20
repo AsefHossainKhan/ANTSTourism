@@ -1,6 +1,9 @@
 app.controller("SellerProfile", function ($scope, $http, ajax, $rootScope) {
-
-    $scope.user=$rootScope;
+    if ($rootScope.UserType != "Seller") {
+        $location.path("/");
+        return;
+    }
+    $scope.user = $rootScope;
     console.log($scope.user.UserName);
     $scope.edit = function (user) {
         console.log("ashshi");
@@ -14,7 +17,7 @@ app.controller("SellerProfile", function ($scope, $http, ajax, $rootScope) {
         };
         console.log(d);
 
-        ajax.post("https://localhost:44384/api/User/edit/"+$rootScope.UserId, d,
+        ajax.post("https://localhost:44384/api/User/edit/" + $rootScope.UserId, d,
             function (response) {
                 console.log(response);
                 alert("edited");

@@ -16,6 +16,12 @@ namespace BLL
             return AutoMapper.Mapper.Map<List<Voucher>, List<VoucherModel>>(vouchers);
         }
 
+        public static List<VoucherModel> GetSearchVouchers(string search)
+        {
+            var vouchers = VoucherRepo.GetSearchVouchers(search);
+            return AutoMapper.Mapper.Map<List<Voucher>, List<VoucherModel>>(vouchers);
+        }
+
         public static VoucherModel GetVoucher(int id)
         {
             var voucher = VoucherRepo.GetVoucher(id);
