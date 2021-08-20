@@ -1,8 +1,8 @@
 app.controller("login", function ($scope, ajax, $rootScope, $location) {
-  // if ($rootScope.isUserLoggedIn) {
-  //   $location.path("");
-  //   return;
-  // }
+  if ($rootScope.isUserLoggedIn) {
+    $location.path("/");
+    return;
+  }
   $rootScope.PageType = "login";
   console.log($rootScope.PageType);
   $scope.login = function (user) {
