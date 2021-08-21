@@ -81,11 +81,11 @@ namespace BLL
         public static void AddBlogs(int id, BlogsModel blogs)
         {
             var b = AutoMapper.Mapper.Map<BlogsModel, Blog>(blogs);
-            CustomerRepo.AddBlogs(id, b);
-
+             CustomerRepo.AddBlogs(id,b);
+          
         }
 
-
+        
         public static List<BlogsModel> GetBlog(int id)
         {
             var b = CustomerRepo.GetBlog(id);
@@ -102,7 +102,7 @@ namespace BLL
         {
             CustomerRepo.DeleteBlogs(id);
         }
-
+      
         //Get Order data
         public static List<OrderModel> GetAllOrders(int id)
         {
@@ -129,10 +129,10 @@ namespace BLL
             CustomerRepo.AddOrder(id, packid, data);
         }
 
-        public static void CancelOrder(int orderid)
+        public static void CancelOrder( int orderid)
         {
-            CustomerRepo.CancelOrder(orderid);
+            CustomerRepo.CancelOrder( orderid);
         }
-
+      
     }
 }

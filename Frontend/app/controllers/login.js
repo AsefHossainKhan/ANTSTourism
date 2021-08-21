@@ -9,9 +9,10 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
     // console.log("ashsi");
     // console.log($scope.Email);
     // console.log($rootScope.UserType);
-    
+
     ajax.post(
-      "https://localhost:44384/api/Login", user,
+      "https://localhost:44384/api/Login",
+      user,
       function (response) {
         // console.log(response);
         $scope.user = response.data;
@@ -30,16 +31,13 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
           //set login status
           if ($scope.user.usertype == "Seller") {
             $rootScope.isUserLoggedIn = true;
-            window.location.href =
-              "http://127.0.0.1:5502/Index.html#!/SellerHome";
-          }
-          else if ($scope.user.usertype == "Admin") {
+            $location.path("/SellerHome");
+          } else if ($scope.user.usertype == "Admin") {
             $rootScope.isUserLoggedIn = true;
-            window.location.href = "http://127.0.0.1:5502/Index.html#!/admin/";
-          }
-          else if ($scope.user.usertype == "Customer") {
+            $location.path("/admin");
+          } else if ($scope.user.usertype == "Customer") {
             $rootScope.isUserLoggedIn = true;
-            window.location.href = "http://127.0.0.1:5502/Index.html#!/customer/dashboard";
+            $location.path("/customer/dashboard");
           }
         }
       },

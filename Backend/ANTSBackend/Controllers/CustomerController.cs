@@ -76,7 +76,7 @@ namespace ANTSBackend.Controllers
         [Route("api/Blogs/add/{id}")]
         [HttpPost]
 
-        public void AddBlogs(int id, BlogsModel blogs)
+        public void AddBlogs(int id,BlogsModel blogs)
         {
             CustomerService.AddBlogs(id, blogs);
         }
@@ -92,7 +92,7 @@ namespace ANTSBackend.Controllers
         [HttpPost]
         public void EditBlog(int id, BlogsModel blogs)
         {
-            CustomerService.EditBlog(id, blogs);
+            CustomerService.EditBlog(id,blogs);
         }
 
         [Route("api/Blogs/delete/{id}")]
@@ -101,6 +101,6 @@ namespace ANTSBackend.Controllers
         {
             CustomerService.DeleteBlogs(id);
         }
-
+       
     }
 }

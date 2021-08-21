@@ -24,7 +24,7 @@ namespace DAL
         //Get customer details
         public static object GetCustomerDetails(int id)
         {
-            return context.Users.FirstOrDefault(e => e.userid == id);
+            return context.Users.FirstOrDefault(e => e.userid == id); 
         }
 
         //Edit Customer
@@ -79,7 +79,7 @@ namespace DAL
             return context.Blogs.Where(e => e.userid == id).ToList();
         }
 
-        public static void AddBlogs(int id, Blog b)
+        public static void AddBlogs(int id,Blog b)
         {
             b.userid = id;
             context.Blogs.Add(b);
@@ -139,8 +139,8 @@ namespace DAL
             context.SaveChanges();
         }
 
-
-        public static void CancelOrder(int orderid)
+       
+        public static void CancelOrder( int orderid)
         {
             var data = context.Orders.FirstOrDefault(e => e.orderid == orderid);
             data.status = "cancelled";

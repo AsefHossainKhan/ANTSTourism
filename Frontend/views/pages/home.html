@@ -69,8 +69,11 @@
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
+          <li ng-if="!isUserLoggedIn"><a href="#!login">Login</a></li>
+          <li ng-if="!isUserLoggedIn"><a href="#!registration">Sign Up</a></li>
+          <li ng-if="isUserLoggedIn"><a href="#!logout">Logout</a></li>
+          
+          
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>

@@ -50,9 +50,9 @@ namespace ANTSBackend.Controllers
 
         [Route("api/CustomerOrder/cancel/{orderid}")]
         [HttpPost]
-        public void CancelOrder(int orderid)
+        public void CancelOrder( int orderid)
         {
-            CustomerService.CancelOrder(orderid);
+            CustomerService.CancelOrder( orderid);
         }
     }
 }
