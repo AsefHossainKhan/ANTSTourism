@@ -26,6 +26,13 @@ namespace BLL
             return customerdetails;
         }
 
+        //Edit Customer Profile
+        public static void EditUser(UserModel user, int id)
+        {
+            var data = AutoMapper.Mapper.Map<UserModel, User>(user);
+            CustomerRepo.EditUser(data, id);
+        }
+
         //Get Package Details
         public static List<PackageModel> GetPackages()
         {
@@ -34,40 +41,66 @@ namespace BLL
             return data;
         }
 
-        //Get All Notices
-        public static List<NoticeModel> GetNotices()
+        public static PackageModel GetPackage(int id)
         {
-            var notices = CustomerRepo.GetNotices();
-            var data = AutoMapper.Mapper.Map<List<Notice>, List<NoticeModel>>(notices);
+            var packages = CustomerRepo.GetPackage(id);
+            var data = AutoMapper.Mapper.Map<Package, PackageModel>(packages);
             return data;
         }
 
-        //Get All Blogs
-        public static List<BlogsModel> GetBlogs()
+        public static List<PackageModel> GetSearchPackage(string search)
         {
-            var blogs = CustomerRepo.GetBlogs();
+            var packageSearch = CustomerRepo.GetSearchPackage(search);
+            return AutoMapper.Mapper.Map<List<Package>, List<PackageModel>>(packageSearch);
+        }
+
+
+
+        //Get All Notices
+        /*
+        public static List<NoticeModel> GetNotices()
+        {
+            var notices = CustomerRepo.GetNotices();
+            return AutoMapper.Mapper.Map<List<Notice>, List<NoticeModel>>(notices);
+        }
+        
+        public static List<NoticeModel> GetSearchNotice(string search)
+        {
+            var noticeSearch = CustomerRepo.GetSearchNotice(search);
+            return AutoMapper.Mapper.Map<List<Notice>, List<NoticeModel>>(noticeSearch);
+        }
+        */
+        //Get All Blogs
+        public static List<BlogsModel> GetBlogs(int id)
+        {
+            var blogs = CustomerRepo.GetBlogs(id);
             var data = AutoMapper.Mapper.Map<List<Blog>, List<BlogsModel>>((List<Blog>)blogs);
             return data; ;
         }
 
-        public static BlogsModel AddBlogs(BlogsModel blogs)
+        public static void AddBlogs(int id, BlogsModel blogs)
         {
             var b = AutoMapper.Mapper.Map<BlogsModel, Blog>(blogs);
-            var data = CustomerRepo.AddBlogs(b);
-            return AutoMapper.Mapper.Map<Blog, BlogsModel>((Blog)data);
+            CustomerRepo.AddBlogs(id, b);
+
         }
 
-        public static BlogsModel EditBlogs(BlogsModel blogs)
+
+        public static List<BlogsModel> GetBlog(int id)
+        {
+            var b = CustomerRepo.GetBlog(id);
+            return AutoMapper.Mapper.Map<List<Blog>, List<BlogsModel>>(b);
+        }
+
+        public static void EditBlog(int id, BlogsModel blogs)
         {
             var b = AutoMapper.Mapper.Map<BlogsModel, Blog>(blogs);
-            var data = CustomerRepo.EditBlogs(b);
-            return AutoMapper.Mapper.Map<Blog, BlogsModel>((Blog)data);
-        }
+            CustomerRepo.EditBlog(id, b);
 
-        public static BlogsModel DeleteBlogs(int id)
+        }
+        public static void DeleteBlogs(int id)
         {
-            var data = CustomerRepo.DeleteBlogs(id);
-            return AutoMapper.Mapper.Map<Blog, BlogsModel>((Blog)data);
+            CustomerRepo.DeleteBlogs(id);
         }
 
         //Get Order data
@@ -78,6 +111,11 @@ namespace BLL
             return data;
         }
 
+        public static List<OrderModel> GetSearchOrder(string search, int id)
+        {
+            var orderSearch = CustomerRepo.GetSearchOrder(search, id);
+            return AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(orderSearch);
+        }
 
         public static OrderModel GetOrders(int id)
         {
@@ -85,17 +123,16 @@ namespace BLL
             return AutoMapper.Mapper.Map<Order, OrderModel>(order);
         }
 
-        public static OrderModel AddOrder(OrderModel order, int id)
+        public static void AddOrder(int id, int packid, OrderModel order)
         {
-            var o = AutoMapper.Mapper.Map<OrderModel, Order>(order);
-            var data = CustomerRepo.AddOrder(o, id);
-            return AutoMapper.Mapper.Map<Order, OrderModel>((Order)data);
+            var data = AutoMapper.Mapper.Map<OrderModel, Order>(order);
+            CustomerRepo.AddOrder(id, packid, data);
         }
 
-        public static OrderModel CancelOrder(int id, int orderid)
+        public static void CancelOrder(int orderid)
         {
-            var data = CustomerRepo.CancelOrder(id, orderid);
-            return AutoMapper.Mapper.Map<Order, OrderModel>((Order)data);
+            CustomerRepo.CancelOrder(orderid);
         }
+
     }
 }

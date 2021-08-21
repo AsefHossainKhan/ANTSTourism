@@ -24,6 +24,13 @@ namespace ANTSBackend.Controllers
             return CustomerService.GetCustomerDetails(id);
         }
 
+        [Route("api/Customer/edit/{id}")]
+        [HttpPost]
+        public void Edit(UserModel user, int id)
+        {
+            CustomerService.EditUser(user, id);
+        }
+
         [Route("api/Packages/GetAll")]
         [HttpGet]
         public List<PackageModel> GetPackages()
@@ -31,39 +38,69 @@ namespace ANTSBackend.Controllers
             return CustomerService.GetPackages();
         }
 
+        [Route("api/Package/{id}")]
+        [HttpGet]
+        public PackageModel GetPackage(int id)
+        {
+            return CustomerService.GetPackage(id);
+        }
+
+        [Route("api/Customer/Package/{search}")]
+        [HttpGet]
+        public List<PackageModel> GetSearchPackage(string search)
+        {
+            return CustomerService.GetSearchPackage(search);
+        }
+
+        /*
         [Route("api/Notices/GetAll")]
         [HttpGet]
         public List<NoticeModel> GetNotices()
         {
             return CustomerService.GetNotices();
         }
-
-        [Route("api/Blogs/GetAll")]
+        
+        [Route("api/Customer/Notices/{search}")]
         [HttpGet]
-        public List<BlogsModel> GetBlogs()
+        public List<NoticeModel> GetSearchNotice(string search)
         {
-            return CustomerService.GetBlogs();
+            return CustomerService.GetSearchNotice(search);
         }
-        [Route("api/Blogs/add")]
+        */
+        [Route("api/Blogs/{id}/GetAll")]
+        [HttpGet]
+        public List<BlogsModel> GetBlogs(int id)
+        {
+            return CustomerService.GetBlogs(id);
+        }
+        [Route("api/Blogs/add/{id}")]
         [HttpPost]
 
-        public BlogsModel AddBlogs(BlogsModel blogs)
+        public void AddBlogs(int id, BlogsModel blogs)
         {
-            return CustomerService.AddBlogs(blogs);
+            CustomerService.AddBlogs(id, blogs);
         }
 
-        [Route("api/Blogs/edit/{id}")]
-        [HttpPost]
-        public BlogsModel EditBlogs(BlogsModel blogs)
+        //Edit Blog
+        [Route("api/Blog/edit/{id}")]
+        [HttpGet]
+        public List<BlogsModel> GetBlog(int id)
         {
-            return CustomerService.EditBlogs(blogs);
+            return CustomerService.GetBlog(id);
+        }
+        [Route("api/Blog/edit/{id}")]
+        [HttpPost]
+        public void EditBlog(int id, BlogsModel blogs)
+        {
+            CustomerService.EditBlog(id, blogs);
         }
 
         [Route("api/Blogs/delete/{id}")]
-        [HttpGet]
-        public BlogsModel DeleteBlog(int id)
+        [HttpPost]
+        public void DeleteBlog(int id)
         {
-            return CustomerService.DeleteBlogs(id);
+            CustomerService.DeleteBlogs(id);
         }
+
     }
 }

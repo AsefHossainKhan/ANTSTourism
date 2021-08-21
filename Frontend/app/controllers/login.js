@@ -1,16 +1,17 @@
 app.controller("login", function ($scope, ajax, $rootScope, $location) {
-  // if ($rootScope.isUserLoggedIn) {
-  //   $location.path("");
-  //   return;
-  // }
-  $scope.login = function () {
+  if ($rootScope.isUserLoggedIn) {
+    $location.path("/");
+    return;
+  }
+  $rootScope.PageType = "login";
+  console.log($rootScope.PageType);
+  $scope.login = function (user) {
     // console.log("ashsi");
     // console.log($scope.Email);
-    ajax.get(
-      "https://localhost:44384/api/Login/" +
-        $scope.Email +
-        "/" +
-        $scope.Password,
+    // console.log($rootScope.UserType);
+    
+    ajax.post(
+      "https://localhost:44384/api/Login", user,
       function (response) {
         // console.log(response);
         $scope.user = response.data;
@@ -29,14 +30,16 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
           //set login status
           if ($scope.user.usertype == "Seller") {
             $rootScope.isUserLoggedIn = true;
-            // console.log($scope.user);
-            $rootScope.isUserSeller = true;
             window.location.href =
               "http://127.0.0.1:5502/Index.html#!/SellerHome";
           }
           else if ($scope.user.usertype == "Admin") {
             $rootScope.isUserLoggedIn = true;
             window.location.href = "http://127.0.0.1:5502/Index.html#!/admin/";
+          }
+          else if ($scope.user.usertype == "Customer") {
+            $rootScope.isUserLoggedIn = true;
+            window.location.href = "http://127.0.0.1:5502/Index.html#!/customer/dashboard";
           }
         }
       },

@@ -1,6 +1,8 @@
 app.controller(
   "adminDeleteUser",
   function ($scope, $http, ajax, $location, $routeParams, $rootScope) {
+  $rootScope.PageType = "admin";
+
     if ($rootScope.UserType != "Admin") {
       $location.path("/");
       return;

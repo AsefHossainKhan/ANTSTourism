@@ -19,6 +19,8 @@ namespace BLL.MapperConfig
             CreateMap<VoucherModel, Voucher>();
             CreateMap<PackageModel, Package>();
             CreateMap<AuditLogModel, Auditlog>();
+            CreateMap<BlogsModel, Blog>();
+            CreateMap<OrderModel, Order>();
             //CreateMap<AuditLogModel, Auditlog>().ForMember(e => e.ac, opt => opt.MapFrom(e => e.admin_name));
             //var map = CreateMap<AuditLogModel, DAL.Action>();
             //map.ForAllMembers(opt => opt.Ignore());
