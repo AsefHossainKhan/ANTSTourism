@@ -34,3 +34,9 @@ J:\ATP2FINALFINALFINALFINAL\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.Assembl
 J:\ATP2FINALFINALFINALFINAL\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
 J:\ATP2FINALFINALFINALFINAL\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
 J:\ATP2FINALFINALFINALFINAL\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\bin\Debug\BEL.dll
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\bin\Debug\BEL.pdb
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\obj\Debug\BEL.dll
+J:\atpjaljalajalontore\ANTSTourism\Backend\BEL\obj\Debug\BEL.pdb
