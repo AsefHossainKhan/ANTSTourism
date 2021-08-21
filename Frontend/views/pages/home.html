@@ -58,6 +58,8 @@
           <li ng-if="!isUserLoggedIn"><a href="#!login">Login</a></li>
           <li ng-if="!isUserLoggedIn"><a href="#!registration">Sign Up</a></li>
           <li ng-if="isUserLoggedIn"><a href="#!logout">Logout</a></li>
+          <li ng-if="UserType==='Admin'"><a href="#!admin">Admin Page</a></li>
+          <li ng-if="UserType==='Seller'"><a href="#!SellerHome">Seller Page</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
