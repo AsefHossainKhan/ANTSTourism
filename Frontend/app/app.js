@@ -166,6 +166,16 @@ app.config([
       })
      
       //Customer End
+
+      //Home
+      .when("/about", {
+        templateUrl: "views/pages/about.html",
+        controller: "about",
+      })
+      .when("/contact", {
+        templateUrl: "views/pages/contact.html",
+        controller: "contact",
+      })
       .otherwise({
         redirectTo: "/",
       });
