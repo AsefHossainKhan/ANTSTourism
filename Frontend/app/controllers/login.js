@@ -37,6 +37,10 @@ app.controller("login", function ($scope, ajax, $rootScope, $location) {
             $rootScope.isUserLoggedIn = true;
             window.location.href = "http://127.0.0.1:5502/Index.html#!/admin/";
           }
+          else if ($scope.user.usertype == "Customer") {
+            $rootScope.isUserLoggedIn = true;
+            window.location.href = "http://127.0.0.1:5502/Index.html#!/customer/dashboard";
+          }
         }
       },
       function (err) {

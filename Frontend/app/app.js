@@ -125,6 +125,47 @@ app.config([
         templateUrl: "views/pages/registration.html",
         controller: "registration",
       })
+
+      //Customer Start 
+      .when("/customer/dashboard", {
+        templateUrl: "views/pages/customerShowPackages.html",
+        controller: "customerShowPackages",
+      })
+      .when("/customer/showNotices", {
+        templateUrl: "views/pages/customerShowNotices.html",
+        controller: "customerShowNotices",
+      })
+      .when("/customer/showBlogs", {
+        templateUrl: "views/pages/customerShowBlogs.html",
+        controller: "customerShowBlogs",
+      })
+      .when("/customer/showOrder", {
+        templateUrl: "views/pages/customerShowOrder.html",
+        controller: "customerShowOrder",
+      })
+      .when("/customer/orders/:id", {
+        templateUrl : "views/pages/customerShowOrderDetails.html",
+        controller: 'customerShowOrderDetails'
+      })
+      .when("/customer/Profile", {
+        templateUrl: "views/pages/customerProfile.html",
+        controller: "customerProfile",
+      })
+      .when("/customer/AddBlog", {
+        templateUrl: "views/pages/customerAddBlogs.html",
+        controller: "customerAddBlogs",
+      })
+      .when("/customer/AddOrder/:id", {
+        templateUrl: "views/pages/customerAddOrder.html",
+        controller: "customerAddOrder",
+      })
+     
+      .when("/customer/EditBlog/:id", {
+        templateUrl: "views/pages/customerEditBlogs.html",
+        controller: "customerEditBlogs",
+      })
+     
+      //Customer End
       .otherwise({
         redirectTo: "/",
       });

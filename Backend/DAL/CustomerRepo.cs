@@ -24,7 +24,18 @@ namespace DAL
         //Get customer details
         public static object GetCustomerDetails(int id)
         {
-            return context.Users.FirstOrDefault(e => e.userid == id); ;
+            return context.Users.FirstOrDefault(e => e.userid == id);
+        }
+
+        //Edit Customer
+        public static void EditUser(User cr, int id)
+        {
+            var oldp = context.Users.FirstOrDefault(e => e.userid == id);
+            oldp.name = cr.name;
+            oldp.password = cr.password;
+            oldp.email = cr.email;
+            oldp.phone = cr.phone;
+            context.SaveChanges();
         }
 
         //Get all packages
@@ -34,41 +45,64 @@ namespace DAL
             return data.ToList();
         }
 
+        public static Package GetPackage(int id)
+        {
+            return context.Packages.FirstOrDefault(e => e.packageid == id);
+        }
+
+        public static List<Package> GetSearchPackage(string search)
+        {
+            var list = (from p in context.Packages
+                        where p.packagename.Contains(search)
+                        select p).ToList();
+            return list;
+        }
+
         //Get All notices
+        /*
         public static List<Notice> GetNotices()
         {
-            var data = context.Notices;
-            return data.ToList();
+             return context.Notices.ToList();
         }
-
+       
+        public static List<Notice> GetSearchNotice(string search)
+        {
+            var list = (from n in context.Notices
+                        where n.notice1.Contains(search)
+                        select n).ToList();
+            return list;
+        }
+         */
         //Get all blogs
-        public static object GetBlogs()
+        public static object GetBlogs(int id)
         {
-            var data = context.Blogs;
-            return data.ToList(); ;
+            return context.Blogs.Where(e => e.userid == id).ToList();
         }
 
-        public static Blog AddBlogs(Blog b)
+        public static void AddBlogs(int id, Blog b)
         {
+            b.userid = id;
             context.Blogs.Add(b);
             context.SaveChanges();
-            return b;
         }
 
-        public static Blog EditBlogs(Blog b)
+        public static List<Blog> GetBlog(int id)
         {
-            var data = context.Blogs.FirstOrDefault(e => e.blogid == b.blogid);
-            context.Entry(data).CurrentValues.SetValues(b);
-            context.SaveChanges();
-            return data;
+            return context.Blogs.Where(e => e.blogid == id).ToList();
         }
 
-        public static Blog DeleteBlogs(int id)
+        public static void EditBlog(int id, Blog b)
+        {
+            var blog = context.Blogs.FirstOrDefault(e => e.blogid == id);
+            blog.blog1 = b.blog1;
+            context.SaveChanges();
+        }
+
+        public static void DeleteBlogs(int id)
         {
             var data = context.Blogs.FirstOrDefault(e => e.blogid == id);
             context.Blogs.Remove(data);
             context.SaveChanges();
-            return data;
         }
 
         //Get orders
@@ -77,28 +111,40 @@ namespace DAL
             return context.Orders.Where(e => e.customerid == id).ToList();
         }
 
-
+        public static List<Order> GetSearchOrder(string search, int id)
+        {
+            var list = (from p in context.Orders
+                        where p.ordername.Contains(search)
+                        where p.customerid == id
+                        select p).ToList();
+            return list;
+        }
         public static Order GetOrders(int id)
         {
             return context.Orders.FirstOrDefault(e => e.orderid == id);
         }
 
-        public static Order AddOrder(Order o, int id)
+        public static void AddOrder(int id, int packid, Order o)
         {
+            var pk = context.Packages.FirstOrDefault(e => e.packageid == packid);
+            var user = context.Users.FirstOrDefault(e => e.userid == id);
             o.createdat = DateTime.Now;
             o.customerid = id;
+            o.customerphone = user.phone;
             o.status = "unsold";
+            o.sellerid = pk.userid;
+            o.ordername = pk.packagename;
+            o.totalprice = pk.price * o.quantity;
             context.Orders.Add(o);
             context.SaveChanges();
-            return o; ;
         }
 
-        public static object CancelOrder(int id, int orderid)
+
+        public static void CancelOrder(int orderid)
         {
             var data = context.Orders.FirstOrDefault(e => e.orderid == orderid);
             data.status = "cancelled";
             context.SaveChanges();
-            return data; ;
         }
     }
 }

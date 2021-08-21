@@ -110,6 +110,8 @@
       ng-if="UserType === 'Admin' && PageType === 'admin'"
       ng-include="'views/inc/admin_side.html'"
     ></div>
+    <div ng-if="UserType === 'Customer' && PageType === 'seller'" ng-include="'views/inc/customer_top.html'"></div>
+    <div ng-if="UserType === 'Customer' && PageType === 'seller'" ng-include="'views/inc/customer_side.html'"></div>
     <div ng-view></div>
 
     <!-- ADMIN LINKS -->
@@ -212,3 +214,16 @@
 <script src="app/controllers/SellerProfile.js"></script>
 <script src="app/controllers/SellerHome.js"></script>
 <script src="app/controllers/SellerDashboard.js"></script>
+
+<!-- Customer controllers -->
+<script src="app/controllers/customerShowPackages.js"></script>
+<script src="app/controllers/customerAddOrder.js"></script>
+<script src="app/controllers/customerShowOrder.js"></script>
+<script src="app/controllers/customerShowOrderDetails.js"></script>
+<script src="app/controllers/customerCancelOrder.js"></script>
+<script src="app/controllers/customerShowBlogs.js"></script>
+<script src="app/controllers/customerAddBlogs.js"></script>
+<script src="app/controllers/customerEditBlogs.js"></script>
+<script src="app/controllers/customerShowNotices.js"></script>
+<script src="app/controllers/customerProfile.js"></script>
+<script src="app/controllers/customerEditProfile.js"></script>
